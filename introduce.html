@@ -21,50 +21,87 @@ and open the template in the editor.
         <script src="bootstrap/js/bootstrap.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <style>
+			@import url(http://cs.nccu.edu.tw/~jonesyu/960gs/code/css/960.css);
+			@import url(http://cs.nccu.edu.tw/~jonesyu/960gs/code/css/reset.css);
+			@import url(http://cs.nccu.edu.tw/~jonesyu/960gs/code/css/text.css);
             p{
                 text-align: center;
             }
+			h1{
+				text-align: center;
+				align: middle;
+				line-height: 300px;
+			}
+			#target{
+				margin-top: 10px;
+				width: auto;
+				height: 300px;
+			}
+			#position{
+				margin-top: 10px;
+				width: auto;
+				height: 300px;
+			}
+			#resource{
+				margin-top: 10px;
+				width: auto;
+				height: 300px;
+			}
+			#future{
+				margin-top: 10px;
+				width: auto;
+				height: 300px;
+			}
+			#committee{
+				margin-top: 10px;
+				width: auto;
+				height: 300px;
+			}
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="row-fluid">
-                <div class="span3">
-                    <div>
+        <div class="container_12">
+            
+                <div class="grid_3 alpha">
+                    <div id="target" onclick="flipInY()" class="well">
                         <h1>對象</h1>
                     </div>
                     <div>
-                        <img src="#">
+                        <img src="image/image1.jpg">
                     </div>
-                    <div>
+                    <div id="position" onclick="flipInY()" class="well">
                         <h1>定位</h1>
                     </div>
                 </div>
-                <div class="span3">
+                <div class="grid_3">
                     <div>
                         <img src="#">
                     </div>
-                    <div>
+                    <div id="resource" onclick="flipInY()" class="well">
                         <h1>資源整合</h1>
                     </div>
                 </div>
-                <div class="span3">
-                    <div>
+                <div class="grid_3">
+                    <div id="future" onclick="flipInY()" class="well">
                         <h1>未來發展</h1>
                     </div>
                     <div>
                         <img src="#">
                     </div>
                 </div>
-                <div class="span3">
+                <div class="grid_3 omega">
                     <div>
                         <img src="#">
                     </div>
-                    <div>
+                    <div id="committee" onclick="flipInY()" class="well">
                         <h1>諮詢委員</h1>
                     </div>
-                </div>
-            </div>
+                </div>        
         </div>
     </body>
+	<script>
+		function flipInY(a){
+			$('#target').addClass('animated flipInY');
+		}
+	</script>
 </html>
