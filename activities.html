@@ -5,12 +5,135 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	
+	<!-- Include theme -->
+	<link type="text/css" href="css/jquery-ui-1.8.5.custom.css" rel="Stylesheet" />
+	
+	<!-- Include jQuery and UI -->
+	<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.9.custom.min.js"></script>
+
+		
+	<!-- Include jQuery CoverFlow widget -->
+	<script type="text/javascript" src="js/ui.coverflow.js"></script>
+
+	<link type="text/css" href="css/activities.css" rel="stylesheet" />
+	
+	<!-- Transformie is a plugin that makes webkit's CSS transforms work in Internet Explorer -->
+	<script src="js/sylvester.js" type="text/javascript"></script>
+	<script src="js/transformie.js" type="text/javascript"></script>
+	
+	<!-- Include mousewheel dependancies and app files -->
+	<script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function(){	
+
+		
+		var demo = {
+
+			yScroll: function(wrapper, scrollable) {
+
+				var wrapper = $(wrapper), scrollable = $(scrollable),
+					loading = $('<div class="loading">Loading...</div>').appendTo(wrapper),
+					internal = null,
+					images	= null;
+					scrollable.hide();
+					images = scrollable.find('img');
+					completed = 0;
+					
+					images.each(function(){
+						if (this.complete) completed++;	
+					});
+					
+					if (completed == images.length){
+						setTimeout(function(){							
+							loading.hide();
+							wrapper.css({overflow: 'hidden'});						
+							scrollable.slideDown('slow', function(){
+								enable();	
+							});					
+						}, 0);	
+					}
+			
+				
+				function enable(){
+					var inactiveMargin = 99,
+						wrapperWidth = wrapper.width(),
+						wrapperHeight = wrapper.height(),
+						scrollableHeight = scrollable.outerHeight() + 2*inactiveMargin,
+						wrapperOffset = 0,
+						top = 0,
+						lastTarget = null;
+
+					
+					wrapper.mousemove(function(e){
+						lastTarget = e.target;
+						wrapperOffset = wrapper.offset();		
+						top = (e.pageY -  wrapperOffset.top) * (scrollableHeight - wrapperHeight) / wrapperHeight - inactiveMargin;
+						if (top < 0){
+							top = 0;
+						}			
+						wrapper.scrollTop(top);
+					});	
+				}			
+			}
+		}
+
+		
+		demo.yScroll('#scroll-pane', 'ul#sortable');
+
+			
+	});
+	</script>
     </head>
     <body>
-        <div>
+<div class="pageWrapper">
+	<h1>Life for fun!</h1>
+	<div class="demo">
+
+		<div class="wrapper">
+			<div id="coverflow">
+	            <img src="actimg/1.jpg" data-artist="ovo" data-album="Plastic Beach"/>
+				<img src="actimg/2.jpg" data-artist="ovo" data-album="Come Around Sunshine"/>
+				<img src="actimg/3.jpg" data-artist="ovo" data-album="Born Free"/>		
+				<img src="actimg/4.jpg" data-artist="ovo" data-album="Recovery"/>
+				<img src="actimg/5.jpg" data-artist="ovo" data-album="I Am Not A Human Being"/>
+				<img src="actimg/6.jpg" data-artist="ovo" data-album="Speak Now"/>
+				<img src="actimg/7.jpg" data-artist="ovo" data-album="The Band Perry"/>
+				<img src="actimg/8.jpg" data-artist="ovo" data-album="Hands All Over"/>
+				<img src="actimg/9.jpg" data-artist="ovo" data-album="Danger Days"/>
+				<img src="actimg/10.jpg" data-artist="ovo" data-album="The Final Frontier"/>
+			</div>
 		</div>
-		<iframe width="526" height="352" frameborder="0" src="http://files.slidemypics.com/app/js/iframe.html?bg_color=1f1f1f&amp;hash=936426ce7709a1f22e7c6bdba1185142&amp;r=0.5477754320017993"></iframe>
+
+		<div id="imageCaption">
+		Sample Text
+		</div>
+
+
+		<div id='slider'></div>
+		</div>
+
+
+		<div class="demo-description">
+		</div>
+
+		<div class="listholder">
+		<div id="scroll-pane">
+		    <ul id="sortable"> 
+		    </ul>
+		</div>
+
+		
+
+		<div id="slider-wrap">
+		<div id="slider-vertical"></div>
+	</div>
+</div>
+
+
+</div>
     </body>
 </html>
