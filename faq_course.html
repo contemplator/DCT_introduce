@@ -4,15 +4,18 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
+    <head><title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>	
+		<script src="js/jquery-1.9.1.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link href="css/jquery-ui.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" media="all" href="960_min/reset.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="960_min/text.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
+
 		<script>
 			$(function() {
 				var icons = {
@@ -21,7 +24,8 @@ and open the template in the editor.
 				};
 				$( "#accordion" ).accordion({
 					icons: icons,
-					heightStyle: "content"
+					heightStyle: "content",
+					collapsible: true
 				});
 				$( "#toggle" ).button().click(function() {
 					if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
