@@ -37,7 +37,7 @@ and open the template in the editor.
 			image{
 				height: 80%;
 			}
-			h3{
+			#menu2 h3{
 				border-left:1px dotted;
 				border-bottom: 1px dotted; 
 				padding: 0 0 6px 8px;
@@ -47,6 +47,24 @@ and open the template in the editor.
 			.event-header{
 				float: right;
 			}
+
+            #hot-block{
+                padding-right: 30px;
+                width: 250px;
+
+            }
+            .link{
+                text-decoration: none;
+                padding: 0 0 6px 0;
+            }
+            table tr{
+                border-top: 1px dotted #333333;
+                clear: both;
+                padding-top: 50px ;
+            }
+            .row1{
+                padding: 50px;
+            }
         </style>
     </head>
     <body>
@@ -65,7 +83,7 @@ and open the template in the editor.
                         <li><a href="member.html" class="btn btn-primary" target="frame">成員</a></li>
                         <li><a href="course.html" class="btn btn-primary" target="frame">課程</a></li>
                         <li><a href="recruit.html" class="btn btn-primary" target="frame">招生訊息</a></li>
-                        <li><a href="form.html" class="btn btn-primary" target="frame">法規與表格</a></li>
+                        <li><a href="from.html" class="btn btn-primary" target="frame">法規與表格</a></li>
                         <li><a href="activities.html" class="btn btn-primary" target="frame">活動照片</a></li>
                         <li><a href="resource.html" class="btn btn-primary" target="frame">競賽與資源</a></li>
                         <li><a href="" class="btn btn-primary" target="frame">常見問題</a></li>
@@ -106,7 +124,7 @@ and open the template in the editor.
             </div>
             
 			<div class="row-fluid" id="menu2">
-                <div class="span4 test">
+                <div class="span4 test" id="hot-block">
                     <h3>
                     	<a href="recruit" class="link" target="frame">
                     		<span class="second_word">招生訊息</span>
@@ -115,7 +133,7 @@ and open the template in the editor.
                     <p>想申請學程嗎？</p>
                 </div>
 
-                <div class="span4">
+                <div class="span4" id="hot-block">
                     <h3>
                     	<a href="course" class="link" target="frame">
                     		<span>課程資訊</span>
@@ -124,7 +142,7 @@ and open the template in the editor.
                     <p>必修、修課地圖、未來發展</p>
                 </div>
 
-                <div class="span4">
+                <div class="span4" id="hot-block">
                     <h3>
 						<a href="#" class="link" target="frame">
 							<span class="second_word">外部連結</span>
@@ -141,11 +159,16 @@ and open the template in the editor.
                 	<div class="event-header">看更多</div>
                     <!-- 要把它放在最新消息右邊-->
 					<table>
-						<tr>
-							<td style="width: 100px">time</td>
-							<td style="width: 10px">|</td>
-							<td style="width: 500px" class="link" target="frame">description</td>
+						<tr class="row1">
+							<td style="width: 100px">05/01</td>
+							<td style="width: 500px" class="link" target="frame"><a href="http://www.getfresh.org.tw/index.aspx"> 第三屆經濟部搶鮮大賽：系統整合實作及創意發想兩類</a></td>
 						</tr>
+                        <tr class="row2">
+                            <td style="width: 100px">05/06</td>
+                            <td style="width: 500px" class="link" target="frame"><a href="http://moltke.cc.nccu.edu.tw/Registration/registration.do?action=conferenceInfo&conferenceID=X06495"> 第三屆數位內容與科技學士學分學程招生說明會</a></td>
+                        </tr>
+
+
 					</table>
                     <!-- <div class="event-date">April 5</div> -->
                     <!-- <div>event description</div> -->

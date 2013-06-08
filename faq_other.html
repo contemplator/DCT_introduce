@@ -1,0 +1,81 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" media="all" href="960_min/reset.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="960_min/text.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
+		<script>
+			$(function() {
+				var icons = {
+					header: "ui-icon-circle-arrow-e",
+					activeHeader: "ui-icon-circle-arrow-s"
+				};
+				$( "#accordion" ).accordion({
+					icons: icons,
+					heightStyle: "content"
+				});
+				$( "#toggle" ).button().click(function() {
+					if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
+						$( "#accordion" ).accordion( "option", "icons", null );
+					} else {
+						$( "#accordion" ).accordion( "option", "icons", icons );
+					}
+				});
+			});
+	         $(function() {
+             $( "#menu" ).menu();
+            });
+		</script>
+
+        <style>
+            #menu_side{
+                position: fixed;
+                top: 200px;
+                left: 0px;
+                width: 100px;
+            }
+            ul{
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+		<div class="container_12">
+			<div class="grid_12">
+				<div id="accordion">
+					<!-- <div class="grid_12"> -->
+						<!-- asdf -->
+					<!-- </div> -->
+
+					<h3>選修學程所開的課程，為何須另外繳交學分費? </h3>
+					<div>
+						<p>本學程比照擴大輔系方式單獨開班及部份合班開課。所以，依擴大輔系開班方式及本校輔系雙主修辦法，選修本學程所開設的課程須另繳學分費，每學分新台幣1133元。考量到同學的經濟負擔，學程也會儘量提供工讀的機會(例如數位藝術中心工讀)或以競賽獎金(例如數位內容達人海報與短片競賽)的方式，在經濟上協助同學。 p>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+        <div id="menu_side">
+            <ul id="menu">
+                <li><a href="#">申請相關</a></li>
+                <li><a href="#">課程相關</a></li>
+                <li><a href="#">其他</a></li>
+            </ul>
+        </div>
+
+
+        <div id="float_menu">
+        </div>
+
+    </body>
+</html>
