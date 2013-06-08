@@ -95,8 +95,10 @@
 	min-height: 0; /* support: IE7 */
 	border-top-style: dashed;
 	border-right-style:none;
-	border-bottom-style:none;
+	border-bottom-style:dashed;
 	border-left-style:none;
+
+	
 }
 .ui-accordion .ui-accordion-icons {
 	padding-left: 2.2em;
@@ -120,7 +122,9 @@
 	border-bottom-style:dashed;
 	border-left-style:none;
 	overflow: auto;	
+
 }
+
 .ui-autocomplete {
 	position: absolute;
 	top: 0;
