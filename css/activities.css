@@ -372,12 +372,12 @@ div.wrapper {
 
 #coverflow img {
 	width: 260px;
-	height: 300px;
+	height: 260px;
 	float: left;
 	position: relative;
 	margin: -35px;
-	 -webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, from(black), color-stop(.7, black), to(transparent));
-
+	padding: 0px 50px 0px 50px; 
+	 -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(black));
 }
 
 #demo-frame {

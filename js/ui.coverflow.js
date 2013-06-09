@@ -57,7 +57,6 @@
 			this.itemHeight = this.items.height();
 			this.duration = o.duration;
 			this.current = o.item; //initial item
-			
 
 			//Bind click events on individual items
 			this.items.bind(o.trigger, function() {
@@ -143,14 +142,12 @@
 					css.width = self.itemWidth * (1+((1-mod)*0.3));
 					css.height = css.width * (self.itemHeight / self.itemWidth);
 					css.top = -((css.height - self.itemHeight) / 3);
-
 					css.left -= self.itemWidth/6 -50;
 					}
 					else{
 					css.width = self.itemWidth;
 					css.height = self.itemHeight;
-					css.top = 0;
-
+					css.top = 0;					
 					if(side == "left"){
 					css.left -= self.itemWidth/5 -50;
 					}
