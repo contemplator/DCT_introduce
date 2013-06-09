@@ -98,6 +98,9 @@
 	border-bottom-style:none;
 	border-left-style:none;
 }
+.ui-accordion .ui-accordion-header-active{
+	font-size: 20px;
+}
 .ui-accordion .ui-accordion-icons {
 	padding-left: 2.2em;
 }
