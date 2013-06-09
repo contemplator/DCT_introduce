@@ -18,6 +18,12 @@ and open the template in the editor.
         <!--js-->
         <script src="bootstrap/js/bootstrap.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+            	$( "#menu" ).menu();
+            });
+
+		</script>
 		<style>
 			p{
 				text-align: center;
@@ -25,7 +31,12 @@ and open the template in the editor.
 			table{
 				border-radius:10px;
 			}
-
+            #menu_side{
+                position: fixed;
+                top: 200px;
+                left: 0px;
+                width: 180px;
+            }
 		</style>
     </head>
     <body>
@@ -82,7 +93,13 @@ and open the template in the editor.
 				</div>
             </div>
         </div>
-		
+		<div id="menu_side">
+            <ul id="menu">
+                <li><a href="#">核心必修</a></li>
+                <li><a href="#">基礎群修-內容與設計</a></li>
+                <li><a href="#">基礎群選-科技</a></li>
+            </ul>
+        </div>
 		<div id="float_menu">
 		</div>
     </body>

@@ -98,6 +98,9 @@
 	border-bottom-style:none;
 	border-left-style:none;
 }
+.ui-accordion .ui-accordion-header-active{
+	font-size: 20px;
+}
 .ui-accordion .ui-accordion-icons {
 	padding-left: 2.2em;
 }
@@ -115,7 +118,7 @@
 }
 .ui-accordion .ui-accordion-content {
 	padding: 1em 2.2em;
-	border-top-style:dashed;
+	border-top-style:none;
 	border-right-style:none;
 	border-bottom-style:dashed;
 	border-left-style:none;

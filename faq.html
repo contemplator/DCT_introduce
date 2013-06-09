@@ -7,9 +7,6 @@ and open the template in the editor.
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>	
 		<script src="js/jquery-1.9.1.js"></script>
 		<script src="js/jquery-ui.js"></script>
 		<link href="css/jquery-ui.css" rel="stylesheet">
@@ -30,13 +27,6 @@ and open the template in the editor.
 					heightStyle: "content"
 				});
 
-				$( "#toggle" ).button().click(function() {
-					if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
-						$( "#accordion" ).accordion( "option", "icons", null );
-					} else {
-						$( "#accordion" ).accordion( "option", "icons", icons );
-					}
-				});
 			});
 	         $(function() {
              $( "#menu" ).menu();
