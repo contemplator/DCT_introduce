@@ -98,9 +98,6 @@
 	border-bottom-style:none;
 	border-left-style:none;
 }
-.ui-accordion .ui-accordion-header-active{
-	font-size: 20px;
-}
 .ui-accordion .ui-accordion-icons {
 	padding-left: 2.2em;
 }
@@ -118,7 +115,7 @@
 }
 .ui-accordion .ui-accordion-content {
 	padding: 1em 2.2em;
-	border-top-style:none;
+	border-top-style:dashed;
 	border-right-style:none;
 	border-bottom-style:dashed;
 	border-left-style:none;
@@ -468,6 +465,7 @@ button.ui-button::-moz-focus-inner {
 	margin: 0;
 	display: block;
 	outline: none;
+	border-style: dashed;
 }
 .ui-menu .ui-menu {
 	margin-top: -3px;
@@ -811,7 +809,7 @@ body .ui-tooltip {
 	font-size: 1em;
 }
 .ui-widget-content {
-	border: 1px solid #aaaaaa;
+	border: 1px dashed #aaaaaa;
 	background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
 	color: #222222;
 }
