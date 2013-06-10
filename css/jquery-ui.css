@@ -118,7 +118,7 @@
 }
 .ui-accordion .ui-accordion-content {
 	padding: 1em 2.2em;
-	border-top-style:none;
+	border-top-style:dashed;
 	border-right-style:none;
 	border-bottom-style:dashed;
 	border-left-style:none;
@@ -468,10 +468,19 @@ button.ui-button::-moz-focus-inner {
 	margin: 0;
 	display: block;
 	outline: none;
+<<<<<<< HEAD
+	border-top-style: none;
+	border-bottom-style:none;
+	border-left-style:none;
+	border-right-style:none;   
+=======
+	border-style: dashed;
+>>>>>>> 85b047337a1096b8638482b72268e6267ddf9735
 }
 .ui-menu .ui-menu {
 	margin-top: -3px;
 	position: absolute;
+
 }
 .ui-menu .ui-menu-item {
 	margin: 0;
@@ -479,6 +488,10 @@ button.ui-button::-moz-focus-inner {
 	width: 100%;
 	/* support: IE10, see #8844 */
 	list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+	border-top-style: none;
+	border-bottom-style:none;
+	border-left-style:none;
+	border-right-style:none;   
 }
 .ui-menu .ui-menu-divider {
 	margin: 5px -2px 5px -2px;
@@ -494,11 +507,13 @@ button.ui-button::-moz-focus-inner {
 	line-height: 1.5;
 	min-height: 0; /* support: IE7 */
 	font-weight: normal;
+
 }
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active {
 	font-weight: normal;
 	margin: -1px;
+
 }
 
 .ui-menu .ui-state-disabled {
@@ -811,7 +826,7 @@ body .ui-tooltip {
 	font-size: 1em;
 }
 .ui-widget-content {
-	border: 1px solid #aaaaaa;
+	border: 1px dashed #aaaaaa;
 	background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
 	color: #222222;
 }
