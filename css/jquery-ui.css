@@ -469,12 +469,16 @@ button.ui-button::-moz-focus-inner {
 	display: block;
 	outline: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	border-top-style: none;
 	border-bottom-style:none;
 	border-left-style:none;
 	border-right-style:none;   
 =======
 	border-style: none;
+>>>>>>> 85b047337a1096b8638482b72268e6267ddf9735
+=======
+	border-style: dashed;
 >>>>>>> 85b047337a1096b8638482b72268e6267ddf9735
 }
 .ui-menu .ui-menu {
