@@ -474,7 +474,7 @@ button.ui-button::-moz-focus-inner {
 	border-left-style:none;
 	border-right-style:none;   
 =======
-	border-style: dashed;
+	border-style: none;
 >>>>>>> 85b047337a1096b8638482b72268e6267ddf9735
 }
 .ui-menu .ui-menu {
@@ -1166,7 +1166,7 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-	border-top-left-radius: 4px;
+ 
 }
 .ui-corner-all,
 .ui-corner-top,
