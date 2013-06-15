@@ -11,8 +11,7 @@ Tags: orange, css
 
 .main-nav a:nth-child(3) {
 	z-index: 6;
-	font-family: '微軟正黑體';
-	}
+}
 
 .main-nav a {
 	display: inline-block;
@@ -23,7 +22,7 @@ Tags: orange, css
 	background: #afafaf;
 	color: #444;
 	text-align: center;
-	font-family: 'Gotham Rounded A', 'Gotham Rounded B', "proxima-nova-soft", sans-serif;
+	font-family: '微軟正黑體', "proxima-nova-soft", sans-serif;
 	font-size: 15px;
 	text-transform: uppercase;
 	-webkit-transition: background 0.3s ease;
