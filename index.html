@@ -34,8 +34,9 @@ and open the template in the editor.
             @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
             body{
                 font-family: '微軟正黑體';
+                background-image: url(image/bkground.png);
             }
-
+          
             header{
                 margin: 10px;
             }
@@ -44,6 +45,7 @@ and open the template in the editor.
                 border-bottom: solid;
                 margin-top: 10px;
                 margin-bottom: 10px;
+                background-color:#FFF;
             }
             /*clock*/
             #clockContainer {
@@ -141,6 +143,7 @@ and open the template in the editor.
             #hot-block{
                 padding-right: 30px;
                 width: 250px;
+                
             }
             .link{
                 text-decoration: none;
@@ -153,6 +156,9 @@ and open the template in the editor.
             }
             .row1{
                 padding: 50px;
+            }
+            #footer{
+                background-color: #e0d9cb;
             }
         </style>
     </head>
@@ -233,8 +239,8 @@ and open the template in the editor.
                 </div>
             </div>
             <div id="content2">
-                <div id="menu2">
-                    <div class="grid_4 alpha test" id="hot-block">
+                <div id="menu2" class="grid_12">
+                    <div class="grid_5 alpha test" id="hot-block">
                         <h3>
                             <a href="recruit" class="link">
                                 <span class="second_word">招生訊息</span>
@@ -243,7 +249,7 @@ and open the template in the editor.
                         <p>想申請學程嗎？</p>
                     </div>
 
-                    <div class="grid_4" id="hot-block">
+                    <div class="grid_5" id="hot-block">
                         <h3>
                             <a href="course" class="link">
                                 <span>課程資訊</span>
@@ -252,7 +258,7 @@ and open the template in the editor.
                         <p>必修、修課地圖、未來發展</p>
                     </div>
 
-                    <div class="grid_4 omega " id="hot-block">
+                    <div class="grid_5 omega " id="hot-block">
                         <h3>
                             <a href="#" class="link">
                                 <span class="second_word">外部連結</span>
@@ -298,9 +304,12 @@ and open the template in the editor.
                     </div>           
                 </div>
             </div>
-            <div id="footer" class="grid_12">
-
-            </div>
+           
+        </div>
+         <div id="footer">
+                <div>
+                    聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
+                </div>
         </div>
     </body>
 </html>
