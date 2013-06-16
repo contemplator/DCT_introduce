@@ -40,14 +40,30 @@ and open the template in the editor.
                 text-align: center;
             }
             table{
+                background-color: white;
                 border-radius:10px;
             }
             #menu_side{
                 position: fixed;
-                top: 200px;
-                left: 0px;
-                width: 180px;
+                top: 230px;
+                left: 10px;
+                width: auto;
             }
+            #coursetable{
+                background:url("image/emozionale_bg.png") no-repeat center bottom;
+                margin-bottom:20px; 
+                border-radius:0; 
+                padding: 0; 
+                position:relative; 
+            }
+            #coursetable h3{
+                padding: 10px;
+                border-bottom: 1px dotted; 
+                border-left:  1px dotted;
+            }
+            #coursetable h4{
+                font-size: 17px;
+            }           
         </style>
         <script>
             $(function() {
@@ -93,7 +109,9 @@ and open the template in the editor.
 
             <div id="content">
                 <div class="grid_12" id="coursetable">
-                    <h3>基礎群選-科技：至少 18 學分，資訊設計與資訊科技類課程至少各需選修 6 學分</h3>
+                    <h3>基礎群選-科技</h3>
+                    <h4>至少 18 學分，資訊設計與資訊科技類課程至少各需選修 6 學分</h4>
+                    <br>
                     <table>
                         <tr>
                             <th style="width: 200px;">課名</th>
