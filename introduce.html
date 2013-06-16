@@ -1,46 +1,3 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="js/jquery-1.9.1.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <!--css-->
-        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-        <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/jquery-ui.css" rel="stylesheet">
-        <!--js-->
-        <script src="bootstrap/js/bootstrap.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <!--other-->
-        <link rel="stylesheet" type="text/css" media="all" href="960_min/reset.css" />
-        <link rel="stylesheet" type="text/css" media="all" href="960_min/text.css" />
-        <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
-
-
-        <style>
-
-
-        </style>
-    </head>
-    <body>
-        <div class="container">
-
-        </div>
-
-
-        <div id="float_menu">
-        </div>
-    </body>
-</html>
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -95,11 +52,7 @@ and open the template in the editor.
                 height: 80%;
             }
 
-/*        * {
-              box-sizing: border-box;
-              -moz-box-sizing: border-box;
-              -webkit-box-sizing: border-box;
-            }
+
 
         /*clock*/
             #clockContainer {
@@ -190,11 +143,11 @@ and open the template in the editor.
           margin: auto;
           background-color: #FFF;
           padding-bottom: 2em;
-          -webkit-box-shadow: #bdc3c7 0 5px 5px;/*
+          /*-webkit-box-shadow: #bdc3c7 0 5px 5px;*//*
           -webkit-border-bottom-left-radius: 8px;
-          -webkit-border-bottom-right-radius: 8px; */
+          -webkit-border-bottom-right-radius: 8px; *//*
           background:url("image/emozionale_bg.png") no-repeat center bottom
-          
+          */
           }
 
           .timeline li {
@@ -204,11 +157,22 @@ and open the template in the editor.
           .information{
             background-color: #FFF;
           }
+          #content{
+            /*background-color: white;*/
+            background-image: url("image/emozionale_bg.png") no-repeat center top; 
+        }
 
           #footer{
+            margin-top: 30px;
                 background-color: #e0d9cb;
                 font-size: 14px;
-            }
+                margin-bottom:20px; /*
+                border-image: url("image/emozionale_bg.png") no-repeat center top; 
+           */ }
+           .shadow{
+            
+           }
+           
 
     </style>
 
@@ -218,7 +182,7 @@ and open the template in the editor.
 </head>
 <body>
         <div class="container_12">
-             <div id="header">
+            <div id="header">
                 <div class="grid_12 head">                   
                     <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
                     <div id="clockContainer" class="grid_3">
@@ -228,119 +192,114 @@ and open the template in the editor.
                             <li id="min"></li>
                         </ul>
                     </div>
-                
                 </div>
             </div>
-            <div class="row-fluid">
-                <div id="nav-bar" class="grid_12">
-                    <nav class="main-nav" id="main-nav">
-                        <a href="index.html" class="home link">
-                            <span class="icon-home" aria-hidden="true"></span>首頁
-                        </a>
-                        <a href="introduce.html" class="forums link">
-                            <span class="icon-star" aria-hidden="true"></span>認識學程
-                        </a>
-                        <a href="member_teacher.html" class="snippets link">
-                            <span class="icon-user" aria-hidden="true"></span>成員
-                        </a>
-                        <a href="course.html" class="gallery link">
-                            <span class="icon-book" aria-hidden="true"></span>課程
-                        </a>
-                        <a href="recruit.html" class="videos link">
-                            <span class="icon-th-list" aria-hidden="true"></span>招生訊息
-                        </a>
-                        <a href="activities.html" class="demos link">
-                            <span class="icon-camera" aria-hidden="true"></span>活動照片
-                        </a>
-                        <a href="/" class="lodge link">
-                            <span class="icon-picture" aria-hidden="true"></span>學生作品
-                        </a>
-                        <a href="faq_apply.html" class="lodge link">
-                            <span class="icon-question-sign" aria-hidden="true"></span>常見問題
-                        </a>
-                    </nav>
-                </div>
+            <div id="nav-bar" class="grid_12">
+                <nav class="main-nav" id="main-nav">
+                    <a href="index.html" class="home link">
+                        <span class="icon-home" aria-hidden="true"></span>首頁
+                    </a>
+                    <a href="introduce.html" class="forums link">
+                        <span class="icon-star" aria-hidden="true"></span>認識學程
+                    </a>
+                    <a href="member_teacher.html" class="snippets link">
+                        <span class="icon-user" aria-hidden="true"></span>成員
+                    </a>
+                    <a href="course.html" class="gallery link">
+                        <span class="icon-book" aria-hidden="true"></span>課程
+                    </a>
+                    <a href="recruit.html" class="videos link">
+                        <span class="icon-th-list" aria-hidden="true"></span>招生訊息
+                    </a>
+                    <a href="activities.html" class="demos link">
+                        <span class="icon-camera" aria-hidden="true"></span>活動照片
+                    </a>
+                    <a href="/" class="lodge link">
+                        <span class="icon-picture" aria-hidden="true"></span>學生作品
+                    </a>
+                    <a href="faq_apply.html" class="lodge link">
+                        <span class="icon-question-sign" aria-hidden="true"></span>常見問題
+                    </a>
+                </nav>
             </div>
+            <div id="content" class="information grid_12">  
+                <ul class="timeline">
+                    <li>
+                        <div class="title">
+
+                            <h2>定位</h2>
+                        </div>
+                        <div class="bubble-container">
+                            <div class="bubble">
+                                <p>以雙主修方式提供全校同學學習以數位內容與科技為主的第二專長，培養具有人文內涵、資訊設計、及科技實作能力的跨領域人才。</p>
+                            </div>
+                            
+                            <div class="arrow"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+
+                            <h2>對象</h2>
+                        </div>
+                        <div class="bubble-container">
+                            <div class="bubble">
+                                <p>本校符合雙主修申請之同學。</p>
+                            </div>
+                        <div class="arrow"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+
+                            <h2>未來發展</h2>
+                        </div>
+                        <div class="bubble-container">
+                            <div class="bubble">
+                                <p>本學程擬以全校學生為對象，發展跨領域的數位內容與科技學程，做為學生的第二專長，除了能提升學生進一步修讀數位內容碩士學位及在未來職場的競爭力外，更能將所學得的資訊科技與數位內容應用能力，在原有的學術領域中產生催化的作用，進而提升政大整體的軟實力。</p>
+                            </div>
+                            <div class="arrow"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+
+                            <h2>資源整合</h2>
+                        </div>
+                        <div class="bubble-container">
+                            <div class="bubble">
+                                <p>本校向以人文社會科學領域見長，具備將學院知識轉化成為數位內容應用知識的學術腹地；另一方面，近年來致力傳播知識、數位內容與資訊科技等相關領域的發展，並於98學年度起設立跨學院的數位內容碩士學位學程，數位內容與科技相關的跨領域教研環境已逐漸成形。</p>
+                            </div>
+                            
+                            <div class="arrow"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+
+                            <h2>諮詢委員</h2>
+                        </div>
+                        <div class="bubble-container">
+          
+                            <div class="bubble">               
+                        <p>施文祥董事長 西基電腦動畫股份有限公司</p>
+                        <p>李政宜總監 和碩聯合科技股份有限公司</p>
+                        <p>吳靜吉教授 國立政治大學講座教授</p>
+                        <p>黃宛華主任 資策會數位教育研究所數位內容中心</p>               
+                        <p>張銘光總監 樂陞科技</p>
+                            </div>
+                            
+                            <div class="arrow"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="shadow"><p></p></div>
         </div>
-       
-
-        <div class="container_12 information">  
-        <ul class="timeline">
-            <li>
-                <div class="title">
-
-                    <h2>定位</h2>
-                </div>
-                <div class="bubble-container">
-                    <div class="bubble">
-                        <p>以雙主修方式提供全校同學學習以數位內容與科技為主的第二專長，培養具有人文內涵、資訊設計、及科技實作能力的跨領域人才。</p>
-                    </div>
-                    
-                    <div class="arrow"></div>
-                </div>
-            </li>
-            <li>
-                <div class="title">
-
-                    <h2>對象</h2>
-                </div>
-                <div class="bubble-container">
-                    <div class="bubble">
-                        <p>本校符合雙主修申請之同學。</p>
-                    </div>
-                <div class="arrow"></div>
-                </div>
-            </li>
-            <li>
-                <div class="title">
-
-                    <h2>未來發展</h2>
-                </div>
-                <div class="bubble-container">
-                    <div class="bubble">
-                        <p>本學程擬以全校學生為對象，發展跨領域的數位內容與科技學程，做為學生的第二專長，除了能提升學生進一步修讀數位內容碩士學位及在未來職場的競爭力外，更能將所學得的資訊科技與數位內容應用能力，在原有的學術領域中產生催化的作用，進而提升政大整體的軟實力。</p>
-                    </div>
-                    <div class="arrow"></div>
-                </div>
-            </li>
-            <li>
-                <div class="title">
-
-                    <h2>資源整合</h2>
-                </div>
-                <div class="bubble-container">
-                    <div class="bubble">
-                        <p>本校向以人文社會科學領域見長，具備將學院知識轉化成為數位內容應用知識的學術腹地；另一方面，近年來致力傳播知識、數位內容與資訊科技等相關領域的發展，並於98學年度起設立跨學院的數位內容碩士學位學程，數位內容與科技相關的跨領域教研環境已逐漸成形。</p>
-                    </div>
-                    
-                    <div class="arrow"></div>
-                </div>
-            </li>
-            <li>
-                <div class="title">
-
-                    <h2>諮詢委員</h2>
-                </div>
-                <div class="bubble-container">
-  
-                    <div class="bubble">               
-                <p>施文祥董事長 西基電腦動畫股份有限公司</p>
-                <p>李政宜總監 和碩聯合科技股份有限公司</p>
-                <p>吳靜吉教授 國立政治大學講座教授</p>
-                <p>黃宛華主任 資策會數位教育研究所數位內容中心</p>               
-                <p>張銘光總監 樂陞科技</p>
-                    </div>
-                    
-                    <div class="arrow"></div>
-                </div>
-            </li>
-</ul>
-</div>
-</div>
 
 <div id="footer">
                 <div class="container_12">
-                    <div class="grid_4">
+                    <div class="gri d_4">
                         聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
                     </div> 
                 </div>
