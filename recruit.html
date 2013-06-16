@@ -35,8 +35,21 @@ and open the template in the editor.
             body{
                 font-family: '微軟正黑體';
                 background-image: url("image/wavegrid.png");
-                /*background-color: black;*/
             }
+           header{
+                margin: 10px;
+            }
+             .head{
+                border-top: solid;
+                border-bottom: solid;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color:#FFF;
+            }
+           
+            image{
+                height: 80%;
+            } 
 
             .bubble {
                 width: 100%;
@@ -49,83 +62,155 @@ and open the template in the editor.
                 text-align: left;
                 display: inline-block; 
             }
-
-
-            .bubble-container {
-                width: 80%;
-                display: block;
-                position: relative;
-                padding-left: 20px;
-                vertical-align: top;
-                display: inline-block; 
+        /*clock*/
+            #clockContainer {
+                width: 120px;
+                height: 120px;
+               position:relative;
+                top: 5px;
+                left: 0px;    
             }
 
-            .arrow {
-                content: '';
-                display: block;
-                position: absolute;
-                left: 12px;
-                bottom: 25%;
-                height: 0;
-                width: 0;
-                border-top: 20px solid transparent;
-                border-bottom: 20px solid transparent;
-                border-right: 20px solid #ecf0f1; }
-
-            .timeline {
-                width: 760px;
-                display: block;
-                margin: auto;
-                background-color: #dde1e2;
-                padding-bottom: 2em;
-                -webkit-box-shadow: #bdc3c7 0 5px 5px;
-                -webkit-border-bottom-left-radius: 8px;
-                -webkit-border-bottom-right-radius: 8px; 
+            #clock {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    margin: 0px;
+                    background: url(image/clock.jpg) 0 0 no-repeat;
+                    list-style: none;
             }
+
+            #sec, #min, #hour {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    top: 0px;
+                    left: 0px;
+                    display: list-item;
+                   text-align: -webkit-match-parent;
+                   margin-left: 0px;
+            }
+
+            #sec {
+                    background: url(image/clock_seconds.png);
+                    z-index: 3;
+            }
+
+            #min {
+                    background: url(image/clock_minutes.png);
+                    z-index: 2;
+            }
+
+            #hour {
+                    background: url(image/clock_hours.png);
+                    z-index: 1;
+            }
+            /*clock end*/
+
+
+        .bubble-container {
+          width: 75%;
+          display: block;
+          position: relative;
+          padding-left: 20px;
+          vertical-align: top;
+          display: inline-block; 
+        }
+    
+        .arrow {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 12px;
+          bottom: 25%;
+          height: 0;
+          width: 0;
+          border-top: 20px solid transparent;
+          border-bottom: 20px solid transparent;
+          border-right: 20px solid #ecf0f1; }
+
+        .timeline {
+          width: 760px;
+          display: block;
+          margin: auto;
+          background-color: #FFF;
+          padding-bottom: 2em;
+          }
+          .timeline li {
+            padding: 8px; 
+          }
+
+          /*bubble*/
+          .information{
+            background-color: white;
+        }
+
 
             .timeline li {
                 padding: 10px;
             }
+            .information{
+                background-color: white;
+            }
+            h2{
+                font-size: 23px;
+            }
+
+
+            #footer{
+                margin-top: 30px;
+                background-color: #e0d9cb;
+                font-size: 14px;
+                margin-bottom:20px; 
+            }
+
+
+
         </style>
     </head>
     <body>
-        <div class="container_12">
+       <div class="container_12">
             <div id="header">
-                <div class="grid_12">
-                    <a href="index.html"><img src="image/header.jpg" alt="" /></a>
-                </div>
-                <div id="nav-bar" class="grid_12">
-                    <nav class="main-nav" id="main-nav">
-                        <a href="index.html" class="home link">
-                            <span class="icon-home" aria-hidden="true"></span>首頁
-                        </a>
-                        <a href="introduce.html" class="forums link">
-                            <span class="icon-star" aria-hidden="true"></span>認識學程
-                        </a>
-                        <a href="member_teacher.html" class="snippets link">
-                            <span class="icon-user" aria-hidden="true"></span>成員
-                        </a>
-                        <a href="course.html" class="gallery link">
-                            <span class="icon-book" aria-hidden="true"></span>課程
-                        </a>
-                        <a href="recruit.html" class="videos link">
-                            <span class="icon-th-list" aria-hidden="true"></span>招生訊息
-                        </a>
-                        <a href="activities.html" class="demos link">
-                            <span class="icon-camera" aria-hidden="true"></span>活動照片
-                        </a>
-                        <a href="masterpiece/masterpiece.html" class="lodge link">
-                            <span class="icon-picture" aria-hidden="true"></span>學生作品
-                        </a>
-                        <a href="faq_apply.html" class="lodge link">
-                            <span class="icon-question-sign" aria-hidden="true"></span>常見問題
-                        </a>
-                    </nav>
+                <div class="grid_12 head">                   
+                    <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
+                    <div id="clockContainer" class="grid_3">
+                        <ul id="clock">
+                            <li id="sec"></li>
+                            <li id="hour"></li>
+                            <li id="min"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <div id="content">
-                <div class="grid_12">
+            <div id="nav-bar" class="grid_12">
+                <nav class="main-nav" id="main-nav">
+                    <a href="index.html" class="home link">
+                        <span class="icon-home" aria-hidden="true"></span>首頁
+                    </a>
+                    <a href="introduce.html" class="forums link">
+                        <span class="icon-star" aria-hidden="true"></span>認識學程
+                    </a>
+                    <a href="member_teacher.html" class="snippets link">
+                        <span class="icon-user" aria-hidden="true"></span>成員
+                    </a>
+                    <a href="course.html" class="gallery link">
+                        <span class="icon-book" aria-hidden="true"></span>課程
+                    </a>
+                    <a href="recruit.html" class="videos link">
+                        <span class="icon-th-list" aria-hidden="true"></span>招生訊息
+                    </a>
+                    <a href="activities.html" class="demos link">
+                        <span class="icon-camera" aria-hidden="true"></span>活動照片
+                    </a>
+                    <a href="/" class="lodge link">
+                        <span class="icon-picture" aria-hidden="true"></span>學生作品
+                    </a>
+                    <a href="faq_apply.html" class="lodge link">
+                        <span class="icon-question-sign" aria-hidden="true"></span>常見問題
+                    </a>
+                </nav>
+            </div>
+            <div id="content" class="information grid_12">
                     <ul class="timeline">
                         <li>
                             <div class="title">
@@ -198,7 +283,6 @@ and open the template in the editor.
                                 <div class="arrow"></div>
                             </div>
                         </li>
-
                         <li>
                             <div class="title">
 
@@ -212,17 +296,18 @@ and open the template in the editor.
                                 <div class="arrow"></div>
                             </div>
                         </li>
-
-
                     </ul>
                 </div>
+            <img src="image/emozionale_bg.png">
             </div>
 
+                
             <div id="footer">
-                <div class="grid_12">
-
+                <div class="container_12">
+                    <div class="grid_4">
+                        聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
+                    </div> 
                 </div>
-            </div>
-        </div>
+            </div>       
     </body>
 </html>

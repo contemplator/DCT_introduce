@@ -29,13 +29,75 @@ and open the template in the editor.
         <link href="css/nav_css.css" rel="stylesheet">
 
         <style>
-            body{
+           body{
                 font-family: '微軟正黑體';
-                background-image: url("image/wavegrid.png");
+                background-image: url("image/bkground.png");
             }
-            header{
+
+           header{
                 margin: 10px;
             }
+
+            .head{
+                border-top: solid;
+                border-bottom: solid;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color:#FFF;
+            }
+
+            image{
+                height: 80%;
+            }
+
+
+        /*clock*/
+            #clockContainer {
+                width: 120px;
+                height: 120px;
+               position:relative;
+                top: 5px;
+                left: 0px;    
+            }
+
+            #clock {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    margin: 0px;
+                    background: url(image/clock.jpg) 0 0 no-repeat;
+                    list-style: none;
+            }
+
+            #sec, #min, #hour {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    top: 0px;
+                    left: 0px;
+                    display: list-item;
+                   text-align: -webkit-match-parent;
+                   margin-left: 0px;
+            }
+
+            #sec {
+                    background: url(image/clock_seconds.png);
+                    z-index: 3;
+            }
+
+            #min {
+                    background: url(image/clock_minutes.png);
+                    z-index: 2;
+            }
+
+            #hour {
+                    background: url(image/clock_hours.png);
+                    z-index: 1;
+            }
+
+            
+            /*clock end*/
+
             p{
                 text-align: center;
             }
@@ -56,50 +118,6 @@ and open the template in the editor.
                 padding: 0; 
                 position:relative; 
             }
-/*        .bubble {
-              width: 100%;
-              padding: .5em 1em;
-              line-height: 1.4em;
-              padding: 20px;
-              background-color: #ecf0f1;
-              position: relative;
-              -webkit-border-radius: 8px;
-              text-align: left;
-              display: inline-block; 
-        }
-
-
-        .bubble-container {
-          width: 75%;
-          display: block;
-          position: relative;
-          padding-left: 20px;
-          vertical-align: top;
-          display: inline-block; 
-        }
-    
-        .arrow {
-          content: '';
-          display: block;
-          position: absolute;
-          left: 12px;
-          bottom: 25%;
-          height: 0;
-          width: 0;
-          border-top: 20px solid transparent;
-          border-bottom: 20px solid transparent;
-          border-right: 20px solid #ecf0f1; }
-
-        #content {
-          width: 760px;
-          display: block;
-          margin: auto;
-          background-color: #dde1e2;
-          padding-bottom: 2em;
-          -webkit-box-shadow: #bdc3c7 0 5px 5px;
-          -webkit-border-bottom-left-radius: 8px;
-          -webkit-border-bottom-right-radius: 8px; 
-        }*/
         #coursetable h3{
             padding: 10px;
             border-bottom: 1px dotted; 
@@ -116,56 +134,48 @@ and open the template in the editor.
         </script>
     </head>
     <body>
-        <div class="container_12">
+       <div class="container_12">
             <div id="header">
-                <div class="grid_12">
-                    <a href="index.html"><img src="image/header.jpg" alt="" /></a>
-                </div>
-                <div id="nav-bar" class="grid_12">
-                    <nav class="main-nav" id="main-nav">
-                        <a href="index.html" class="home link">
-                            <span class="icon-home" aria-hidden="true"></span>首頁
-                        </a>
-                        <a href="introduce.html" class="forums link">
-                            <span class="icon-star" aria-hidden="true"></span>認識學程
-                        </a>
-                        <a href="member_teacher.html" class="snippets link">
-                            <span class="icon-user" aria-hidden="true"></span>成員
-                        </a>
-                        <a href="course.html" class="gallery link">
-                            <span class="icon-book" aria-hidden="true"></span>課程
-                        </a>
-                        <a href="recruit.html" class="videos link">
-                            <span class="icon-th-list" aria-hidden="true"></span>招生訊息
-                        </a>
-                        <a href="activities.html" class="demos link">
-                            <span class="icon-camera" aria-hidden="true"></span>活動照片
-                        </a>
-                        <a href="masterpiece/masterpiece.html" class="lodge link">
-                            <span class="icon-picture" aria-hidden="true"></span>學生作品
-                        </a>
-                        <a href="faq_apply.html" class="lodge link">
-                            <span class="icon-question-sign" aria-hidden="true"></span>常見問題
-                        </a>
-                    </nav>
+                <div class="grid_12 head">                   
+                    <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
+                    <div id="clockContainer" class="grid_3">
+                        <ul id="clock">
+                            <li id="sec"></li>
+                            <li id="hour"></li>
+                            <li id="min"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <div id="nav-bar" class="grid_12">
+                <nav class="main-nav" id="main-nav">
+                    <a href="index.html" class="home link">
+                        <span class="icon-home" aria-hidden="true"></span>首頁
+                    </a>
+                    <a href="introduce.html" class="forums link">
+                        <span class="icon-star" aria-hidden="true"></span>認識學程
+                    </a>
+                    <a href="member_teacher.html" class="snippets link">
+                        <span class="icon-user" aria-hidden="true"></span>成員
+                    </a>
+                    <a href="course.html" class="gallery link">
+                        <span class="icon-book" aria-hidden="true"></span>課程
+                    </a>
+                    <a href="recruit.html" class="videos link">
+                        <span class="icon-th-list" aria-hidden="true"></span>招生訊息
+                    </a>
+                    <a href="activities.html" class="demos link">
+                        <span class="icon-camera" aria-hidden="true"></span>活動照片
+                    </a>
+                    <a href="/" class="lodge link">
+                        <span class="icon-picture" aria-hidden="true"></span>學生作品
+                    </a>
+                    <a href="faq_apply.html" class="lodge link">
+                        <span class="icon-question-sign" aria-hidden="true"></span>常見問題
+                    </a>
+                </nav>
+            </div>
 
- <!--            <div id="content">
-            <li>
-                <div class="subtitle">
-
-                    <h2 style="font-size:20px">基礎群選-內容與設計</h2>
-                </div><br>
-                <div class="bubble-container">
-                    <div class="bubble">
-                        <p>至少 18 學分，資訊設計與資訊科技類課程至少各需選修 6 學分</p>
-                    </div>
-                    
-                    <div class="arrow"></div>
-                </div>
-            </li>
-        </div> -->
 
                 <div class="grid_12" id="coursetable">
                     <h3>基礎群選-內容與設計</h3>

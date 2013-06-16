@@ -35,7 +35,15 @@ and open the template in the editor.
             }
             header{
                 margin: 10px;
-                           }
+            }
+             .head{
+                border-top: solid;
+                border-bottom: solid;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color:#FFF;
+            }
+
             p{
                 text-align: center;
             }
@@ -44,8 +52,54 @@ and open the template in the editor.
                 background-color: white;
                 border-radius:10px;
             }
+        /*clock*/
+            #clockContainer {
+                width: 120px;
+                height: 120px;
+               position:relative;
+                top: 5px;
+                left: 0px;    
+            }
+
+            #clock {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    margin: 0px;
+                    background: url(image/clock.jpg) 0 0 no-repeat;
+                    list-style: none;
+            }
+
+            #sec, #min, #hour {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    top: 0px;
+                    left: 0px;
+                    display: list-item;
+                   text-align: -webkit-match-parent;
+                   margin-left: 0px;
+            }
+
+            #sec {
+                    background: url(image/clock_seconds.png);
+                    z-index: 3;
+            }
+
+            #min {
+                    background: url(image/clock_minutes.png);
+                    z-index: 2;
+            }
+
+            #hour {
+                    background: url(image/clock_hours.png);
+                    z-index: 1;
+            }
+
+            
+            /*clock end*/   
+
             #coursetable{
-                background:url("image/emozionale_bg.png") no-repeat center bottom;
                 margin-bottom:20px; 
                 border-radius:0; 
                 padding: 0; 
@@ -65,7 +119,20 @@ and open the template in the editor.
             }
             #coursetable h4{
                 font-size: 17px;
-            }           
+            }
+           
+           #footer{
+                margin-top: 30px;
+                background-color: #e0d9cb;
+                font-size: 14px;
+                margin-bottom:20px; 
+            }
+            #content{
+                background-color: white;
+            }
+
+
+
         </style>
         <script>
             $(function() {
@@ -74,43 +141,47 @@ and open the template in the editor.
         </script>
     </head>
     <body>
-        <div class="container_12">
+       <div class="container_12">
             <div id="header">
-                <div class="grid_12">
-                    <a href="index.html"><img src="image/header.jpg" alt="" /></a>
-                </div>
-
-                <div id="nav-bar" class="grid_12">
-                    <nav class="main-nav" id="main-nav">
-
-                        <a href="index.html" class="home link">
-                            <span class="icon-home" aria-hidden="true"></span>首頁
-                        </a>
-                        <a href="introduce.html" class="forums link">
-                            <span class="icon-star" aria-hidden="true"></span>認識學程
-                        </a>
-                        <a href="member_teacher.html" class="snippets link">
-                            <span class="icon-user" aria-hidden="true"></span>成員
-                        </a>
-                        <a href="course.html" class="gallery link">
-                            <span class="icon-book" aria-hidden="true"></span>課程
-                        </a>
-                        <a href="recruit.html" class="videos link">
-                            <span class="icon-th-list" aria-hidden="true"></span>招生訊息
-                        </a>
-                        <a href="activities.html" class="demos link">
-                            <span class="icon-camera" aria-hidden="true"></span>活動照片
-                        </a>
-                        <a href="masterpiece/masterpiece.html" class="lodge link">
-                            <span class="icon-picture" aria-hidden="true"></span>學生作品
-                        </a>
-                        <a href="faq_apply.html" class="lodge link">
-                            <span class="icon-question-sign" aria-hidden="true"></span>常見問題
-                        </a>
-                    </nav>
+                <div class="grid_12 head">                   
+                    <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
+                    <div id="clockContainer" class="grid_3">
+                        <ul id="clock">
+                            <li id="sec"></li>
+                            <li id="hour"></li>
+                            <li id="min"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
+            <div id="nav-bar" class="grid_12">
+                <nav class="main-nav" id="main-nav">
+                    <a href="index.html" class="home link">
+                        <span class="icon-home" aria-hidden="true"></span>首頁
+                    </a>
+                    <a href="introduce.html" class="forums link">
+                        <span class="icon-star" aria-hidden="true"></span>認識學程
+                    </a>
+                    <a href="member_teacher.html" class="snippets link">
+                        <span class="icon-user" aria-hidden="true"></span>成員
+                    </a>
+                    <a href="course.html" class="gallery link">
+                        <span class="icon-book" aria-hidden="true"></span>課程
+                    </a>
+                    <a href="recruit.html" class="videos link">
+                        <span class="icon-th-list" aria-hidden="true"></span>招生訊息
+                    </a>
+                    <a href="activities.html" class="demos link">
+                        <span class="icon-camera" aria-hidden="true"></span>活動照片
+                    </a>
+                    <a href="/" class="lodge link">
+                        <span class="icon-picture" aria-hidden="true"></span>學生作品
+                    </a>
+                    <a href="faq_apply.html" class="lodge link">
+                        <span class="icon-question-sign" aria-hidden="true"></span>常見問題
+                    </a>
+                </nav>
+            </div>
             <div id="content">
                 <div class="grid_12" id="coursetable">
                     <h3>核心必修</h3>
@@ -169,8 +240,12 @@ and open the template in the editor.
                         </tr>
 
                     </table>
+
+                    
                 </div>
+                
             </div>
+            <img src="image/emozionale_bg.png">
             
             <div id="menu_side">
                 <ul id="menu">
@@ -181,10 +256,12 @@ and open the template in the editor.
             </div>
 
             <div id="footer">
-                <div class="grid_12">
-
+                <div class="container_12">
+                    <div class="grid_4">
+                        聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
+                    </div> 
                 </div>
-            </div>
-        </div>
+            </div> 
+            </div>              
     </body>
 </html>
