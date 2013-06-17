@@ -25,6 +25,17 @@ body {
 
 /* Layout
    -------------------------------- */
+.bottom:{
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+
+.albshow{
+width: 940px;
+height: 700px;
+padding: 10px;
+background-color:white;
+}
 
 .layout-grid {
 	width: 960px;
@@ -200,6 +211,7 @@ div.demo {
 	padding:12px;
 	font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif";
 	background-color:#FFFFFF;
+	width: 940px;
 }
 
 div.demo h3.docs { clear:left; font-size:12px; font-weight:normal; padding:0 0 1em; margin:0; }
@@ -376,7 +388,7 @@ div.wrapper {
 	float: left;
 	position: relative;
 	margin: -35px;
-	padding: 0px 50px 0px 50px; 
+	padding: 0px 25px 0px 25px; 
 	 -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(black));
 }
 
