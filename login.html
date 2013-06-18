@@ -1,0 +1,33 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="js/jquery-1.9.1.js"></script>
+    </head>
+    <body>
+        <label>帳號</label><input type="text" id="account" placeholder="請輸入帳號"/><br/>
+        <label>密碼</label><input type="password" id="password" placeholder="請輸入密碼"/><br/>
+        <button id="login" onclick="login()">登入</button>
+        <button id="back" onclick="back()">回上一頁</button>
+        <script>
+            function login(){
+                var acc = $("#account").val();
+                var pas = $("#password").val();
+                if(acc == "test" && pas == "test"){
+                    window.location.assign("index.html");
+                }
+                else{
+                    back();
+                }
+            }
+            function back(){
+                window.location.assign("index_1.html");
+            }
+        </script>
+    </body>
+</html>
