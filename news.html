@@ -142,15 +142,44 @@ and open the template in the editor.
                 </nav>
             </div>
         
-		<div>
-			<table>
-				<tr>
-					<td>2013/06/06</td>
-					<td>|</td>
-					<td><a href="">Words and Places: Etel Adnan Exhibition</a></td>
-				</tr>
-			</table>
+			<div>
+                <table id="news_content">
+                    <tr><th>公告類別<</th><th>公告名稱<</th><th>公告時間<</th></tr>
+                </table>
+            </div>
 		</div>
+		<script>
+            $(function() {
+                Parse.initialize("LO28TRXHBIC7zQTwO3OYhHcf66g8j46ux7XXc2Aq", "x8MYJCuOQsYFDRZK4wwbbkv5CRjbwkG8VrIkQfsx");
+                var News = Parse.Object.extend("News");
+                
+                var news = new Parse.Query(News);
+                news.descending("date");
+
+                var collection = news.collection();
+                collection.fetch({
+                    success: function(collection) {
+                        collection.each(function(object) {
+
+                            var year = object.get("date").getFullYear();
+                            var month = object.get("date").getMonth();
+                            var date = object.get("date").getDate();
+                            var date = year + "-" + month + "-" + date;
+
+                            $("#news_content").append("<tr id=" + object.id + ">\n\
+                                <td>" + object.get("type") + "</td>\n\
+                                <td><a href=\"" + object.get("website") + "\">" + object.get("title") + "</a></td>\n\
+                                <td>" + date + "</td>\n\
+                                </tr>");
+
+                        });
+                    },
+                    error: function(collection, error) {
+                        // The collection could not be retrieved.
+                    }
+                });
+            });
+        </script>
     </body>
 
 </html>
