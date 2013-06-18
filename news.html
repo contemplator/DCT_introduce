@@ -5,7 +5,7 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-         <title></title>
+        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <!--jquery-->
@@ -29,78 +29,78 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
 
         <script src="js/clock.js"></script>
- 
+
         <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
         <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
         <style>
-           body{
+            body{
                 font-family: '微軟正黑體';
                 background-image: url("image/wavegrid.png");
             }
-           header{
+            header{
                 margin: 10px;
             }
-             .head{
+            .head{
                 border-top: solid;
                 border-bottom: solid;
                 margin-top: 10px;
                 margin-bottom: 10px;
                 background-color:#FFF;
             }
-           
+
             image{
                 height: 80%;
             }
-        /*clock*/
+            /*clock*/
             #clockContainer {
                 width: 120px;
                 height: 120px;
-               position:relative;
+                position:relative;
                 top: 5px;
                 left: 0px;    
             }
 
             #clock {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    margin: 0px;
-                    background: url(image/clock.jpg) 0 0 no-repeat;
-                    list-style: none;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                margin: 0px;
+                background: url(image/clock.jpg) 0 0 no-repeat;
+                list-style: none;
             }
 
             #sec, #min, #hour {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    top: 0px;
-                    left: 0px;
-                    display: list-item;
-                   text-align: -webkit-match-parent;
-                   margin-left: 0px;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                top: 0px;
+                left: 0px;
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-left: 0px;
             }
 
             #sec {
-                    background: url(image/clock_seconds.png);
-                    z-index: 3;
+                background: url(image/clock_seconds.png);
+                z-index: 3;
             }
 
             #min {
-                    background: url(image/clock_minutes.png);
-                    z-index: 2;
+                background: url(image/clock_minutes.png);
+                z-index: 2;
             }
 
             #hour {
-                    background: url(image/clock_hours.png);
-                    z-index: 1;
+                background: url(image/clock_hours.png);
+                z-index: 1;
             }
             /*clock end*/          
-		
+
         </style>
     </head>
     <body>
-       <div class="container_12">
+        <div class="container_12">
             <div id="header">
                 <div class="grid_12 head">                   
                     <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
@@ -141,18 +141,19 @@ and open the template in the editor.
                     </a>
                 </nav>
             </div>
-        
-			<div>
+
+            <div>
                 <table id="news_content">
                     <tr><th>公告類別<</th><th>公告名稱<</th><th>公告時間<</th></tr>
                 </table>
             </div>
-		</div>
-		<script>
+        </div>
+        <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
+        <script>
             $(function() {
                 Parse.initialize("LO28TRXHBIC7zQTwO3OYhHcf66g8j46ux7XXc2Aq", "x8MYJCuOQsYFDRZK4wwbbkv5CRjbwkG8VrIkQfsx");
                 var News = Parse.Object.extend("News");
-                
+
                 var news = new Parse.Query(News);
                 news.descending("date");
 
@@ -167,10 +168,10 @@ and open the template in the editor.
                             var date = year + "-" + month + "-" + date;
 
                             $("#news_content").append("<tr id=" + object.id + ">\n\
-                                <td>" + object.get("type") + "</td>\n\
-                                <td><a href=\"" + object.get("website") + "\">" + object.get("title") + "</a></td>\n\
-                                <td>" + date + "</td>\n\
-                                </tr>");
+                        <td>" + object.get("type") + "</td>\n\
+                        <td><a href=\"" + object.get("website") + "\">" + object.get("title") + "</a></td>\n\
+                        <td>" + date + "</td>\n\
+                        </tr>");
 
                         });
                     },
