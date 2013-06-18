@@ -31,12 +31,12 @@ and open the template in the editor.
         <style>
             body{
                 font-family: '微軟正黑體';
-                background-image: url("image/wavegrid.png");
+                background-image: url(image/bkground.png);
             }
             header{
                 margin: 10px;
             }
-             .head{
+            .head{
                 border-top: solid;
                 border-bottom: solid;
                 margin-top: 10px;
@@ -100,6 +100,7 @@ and open the template in the editor.
             /*clock end*/   
 
             #coursetable{
+                background:url("image/emozionale_bg.png") no-repeat center bottom;
                 margin-bottom:20px; 
                 border-radius:0; 
                 padding: 0; 
@@ -110,7 +111,9 @@ and open the template in the editor.
                 top: 230px;
                 left: 10px;
                 width: auto;
+
             }
+
 
             #coursetable h3{
                 padding: 10px;
@@ -130,7 +133,11 @@ and open the template in the editor.
             #content{
                 background-color: white;
             }
-
+/*            .s1{
+                position: relative ;
+                bottom: -29px;
+                left: 5px;
+            }*/
 
 
         </style>
@@ -182,7 +189,7 @@ and open the template in the editor.
                     </a>
                 </nav>
             </div>
-            <div id="content">
+         <div id="content">
                 <div class="grid_12" id="coursetable">
                     <h3>核心必修</h3>
                     <h4>共19學分</h4>
@@ -239,13 +246,13 @@ and open the template in the editor.
                             <td><p>本課程是專題實作一學年的第二學期課程。將透過實作與個別指導，讓學生針對有興趣的數位內容主題，利用所學到的知識與技能，發揮創意，在內容與技術上設計與完成具深度的實作。學程亦可能協助該主題尋求建教合作機會。</p></td>
                         </tr>
 
-                    </table>
-
                     
+
+                    </table>
                 </div>
-                
-            </div>
-            <img src="image/emozionale_bg.png">
+           
+<!--             <img src="image/emozionale_bg.png" class="s1">                 
+ -->            </div>
             
             <div id="menu_side">
                 <ul id="menu">
@@ -254,6 +261,7 @@ and open the template in the editor.
                     <li><a href="course_3.html">基礎群選-科技</a></li>
                 </ul>
             </div>
+            </div>  
 
             <div id="footer">
                 <div class="container_12">
@@ -261,7 +269,6 @@ and open the template in the editor.
                         聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
                     </div> 
                 </div>
-            </div> 
-            </div>              
+            </div>             
     </body>
 </html>
