@@ -1,0 +1,207 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!--jquery-->
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <link href="css/jquery-ui.css" rel="stylesheet">
+
+        <!--bootstrap-->
+        <!-- <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
+        <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <!-- <link href="bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+
+        <!--other-->
+        <!-- <link href="css/animate-custom.css" rel="stylesheet"> -->
+        <link rel="stylesheet" type="text/css" media="all" href="960_min/reset.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="960_min/text.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
+        <link href="css/nav_css.css" rel="stylesheet">
+
+        <style>
+            body{
+                font-family: '微軟正黑體';
+                background-image: url(image/bkground.png);
+            }
+
+            .head{
+                border-top: solid;
+                border-bottom: solid;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color:#FFF;
+            }
+            /*clock*/
+            #clockContainer {
+                width: 120px;
+                height: 120px;
+                position:relative;
+                top: 5px;
+                left: 0px;    
+            }
+
+            #clock {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                margin: 0px;
+                background: url(image/clock.jpg) 0 0 no-repeat;
+                list-style: none;
+            }
+
+            #sec, #min, #hour {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                top: 0px;
+                left: 0px;
+            }
+
+            #sec {
+                background: url(image/clock_seconds.png);
+                z-index: 3;
+            }
+
+            #min {
+                background: url(image/clock_minutes.png);
+                z-index: 2;
+            }
+
+            #hour {
+                background: url(image/clock_hours.png);
+                z-index: 1;
+            }
+
+            li{
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-left: 0px;
+            }
+            /*clock end*/
+
+            #footer{
+                background-color: #e0d9cb;
+                font-size: 14px;
+            }
+        </style>
+        <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+//            alert('location.href: ' + location.href);
+                //輸出値為 location.href: http://www.wibibi.com/test.html?tid=222#333
+//                    alert('location.protocol: ' + location.protocol);
+                //輸出値為 location.protocol: http:
+//                    alert('location.hostname: ' + location.hostname);
+                //輸出値為 location.hostname: www.wibibi.com
+//                    alert('location.host: ' + location.host);
+                //輸出値為 location.host: www.wibibi.com
+//                    alert('location.port: ' + location.port);
+                //輸出値為 80
+//                    alert('location.pathname: ' + location.pathname);
+                //輸出値為 location.pathname: /test.html
+///////////////                alert('location.search: ' + location.search);
+                //輸出値為 location.search: ?tid=222
+//                    alert('location.hash: ' + location.hash);
+                //輸出値為 location.hash: #333
+
+                var student_id = location.search;
+                var index = student_id.indexOf("=") + 1;
+                student_id = student_id.substr(index);
+                student_id = parseInt(student_id,10);
+                
+                Parse.initialize("LO28TRXHBIC7zQTwO3OYhHcf66g8j46ux7XXc2Aq", "x8MYJCuOQsYFDRZK4wwbbkv5CRjbwkG8VrIkQfsx");
+                var Works = Parse.Object.extend("Works");
+                var works = new Parse.Query(Works);
+                works.equalTo("student_id", student_id);
+                var collection = works.collection();
+
+                collection.fetch({
+                    success: function(collection) {
+                        collection.each(function(object) {
+
+                            $("#works").append("<tr name=\"" + object.id + "\">\n\
+                        <td><a href=\"" + object.get("youtube") + "\">" + object.get("name") + "</td>\n\
+                        <td>" + object.get("class") + "</td>\n\
+                        <td>" + object.get("author") + "</td>\n\
+                        </tr>");
+
+                        });
+                    },
+                    error: function(collection, error) {
+                        // The collection could not be retrieved.
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container_12">
+            <div id="header">
+                <div class="grid_12 head">                   
+                    <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
+                    <div id="clockContainer" class="grid_3">
+                        <ul id="clock">
+                            <li id="sec"></li>
+                            <li id="hour"></li>
+                            <li id="min"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="nav-bar" class="grid_12">
+                <nav class="main-nav" id="main-nav">
+                    <a href="index.html" class="home link">
+                        <span class="icon-home" aria-hidden="true"></span>首頁
+                    </a>
+                    <a href="introduce.html" class="forums link">
+                        <span class="icon-star" aria-hidden="true"></span>認識學程
+                    </a>
+                    <a href="member_teacher.html" class="snippets link">
+                        <span class="icon-user" aria-hidden="true"></span>成員
+                    </a>
+                    <a href="course.html" class="gallery link">
+                        <span class="icon-book" aria-hidden="true"></span>課程
+                    </a>
+                    <a href="recruit.html" class="videos link">
+                        <span class="icon-th-list" aria-hidden="true"></span>招生訊息
+                    </a>
+                    <a href="activities.html" class="demos link">
+                        <span class="icon-camera" aria-hidden="true"></span>活動照片
+                    </a>
+                    <a href="/" class="lodge link">
+                        <span class="icon-picture" aria-hidden="true"></span>學生作品
+                    </a>
+                    <a href="faq_apply.html" class="lodge link">
+                        <span class="icon-question-sign" aria-hidden="true"></span>常見問題
+                    </a>
+                </nav>
+            </div>
+
+            <div id="content">
+                <div class="grid_12">
+                    <table id="works">
+                        <tr><th>作品名稱</th><th>課程名稱</th><th>學生姓名</th></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container_12">
+                <div class="grid_4">
+                    聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
+                </div> 
+            </div>
+        </div>
+        <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
+    </body>
+</html>
