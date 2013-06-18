@@ -27,70 +27,69 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" media="all" href="960_min/text.css" />
         <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
         <link href="css/nav_css.css" rel="stylesheet">
-        <script src="js/clock.js"></script>
 
         <style>
             body{
                 font-family: '微軟正黑體';
                 background-image: url(image/bkground.png);
             }
-           header{
+            header{
                 margin: 10px;
             }
-             .head{
+            .head{
                 border-top: solid;
                 border-bottom: solid;
                 margin-top: 10px;
                 margin-bottom: 10px;
                 background-color:#FFF;
             }
-           
+
             image{
                 height: 80%;
             } 
 
-        /*clock*/
+            /*clock*/
             #clockContainer {
                 width: 120px;
                 height: 120px;
-               position:relative;
+                position:relative;
                 top: 5px;
                 left: 0px;    
             }
 
             #clock {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    margin: 0px;
-                    background: url(image/clock.jpg) 0 0 no-repeat;
-                    list-style: none;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                margin: 0px;
+                background: url(image/clock.jpg) 0 0 no-repeat;
+                list-style: none;
             }
 
             #sec, #min, #hour {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    top: 0px;
-                    left: 0px;
-                    display: list-item;
-                   text-align: -webkit-match-parent;
-                   margin-left: 0px;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                top: 0px;
+                left: 0px;
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-left: 0px;
             }
 
             #sec {
-                    background: url(image/clock_seconds.png);
-                    z-index: 3;
+                background: url(image/clock_seconds.png);
+                z-index: 3;
             }
 
             #min {
-                    background: url(image/clock_minutes.png);
-                    z-index: 2;
+                background: url(image/clock_minutes.png);
+                z-index: 2;
             }
 
             #hour {
-                    background: url(image/clock_hours.png);
-                    z-index: 1;
+                background: url(image/clock_hours.png);
+                z-index: 1;
             }
             /*clock end*/            #content{
                 background-color: white;
@@ -129,16 +128,12 @@ and open the template in the editor.
                 background-color: #e0d9cb;
                 font-size: 14px;
             }
-            
+
         </style>
-        <script>
-            $(function() {
-                $("#menu").menu();
-            });
-        </script>
+
     </head>
     <body>
-      <div class="container_12">
+        <div class="container_12">
             <div id="header">
                 <div class="grid_12 head">                   
                     <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
@@ -181,78 +176,7 @@ and open the template in the editor.
             </div>
 
             <div id="content">
-                <div class="grid_4">
-                    <div class="outside">
-                        <div class="photo">
-                            <img src="image/member1shadowr.jpg">
-                        </div>
-                        <div class="content">
-                            <p>美國明尼蘇達大學教育心理學博士</p>
-                            <p>‧教育心理研究 <br> ‧創造力研究 <br>‧多元智慧</p>
-                            <p>jjwu@saec.edu.tw<br>研究室電話：分機67753</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid_4">
-                    <div class="outside">
-                        <div class="photo">
-                            <img src="image/member1shadowr.jpg">
-                        </div>
-                        <div class="content">
-                            <p>美國德州奧斯汀大學廣告研究所碩士</p>
-                            <p>‧廣告設計 <br> ‧廣告設計 <br>‧電腦繪圖</p>
-                            <p>ygwu@nccu.edu.tw<br>研究室電話：分機88026</p>
-                        </div>
-                    </div>                    
-                </div>
-                <div class="grid_4">
-                    <div class="outside">
-                        <div class="photo">
-                            <img src="image/member1shadowr.jpg">
-                        </div>
-                        <div class="content">
-                            <p>美國哥倫比亞大學教育傳播博士</p>
-                            <p>‧網路傳播 <br> ‧網路媒體 <br>‧傳播與哲學</p>
-                            <p>smwu@nccu.edu.tw<br>研究室電話：分機67219</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid_4">
-                    <div class="outside">
-                        <div class="photo">
-                            <img src="image/member1shadowr.jpg">
-                        </div>
-                        <div class="content">
-                            <p>美國明尼蘇達大學教育心理學博士</p>
-                            <p>‧教育心理研究 <br> ‧創造力研究 <br>‧多元智慧</p>
-                            <p>jjwu@saec.edu.tw<br>研究室電話：分機67753</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid_4">
-                    <div class="outside">
-                        <div class="photo">
-                            <img src="image/member1shadowr.jpg">
-                        </div>
-                        <div class="content">
-                            <p>美國德州奧斯汀大學廣告研究所碩士</p>
-                            <p>‧廣告設計 <br> ‧廣告設計 <br>‧電腦繪圖</p>
-                            <p>ygwu@nccu.edu.tw<br>研究室電話：分機88026</p>
-                        </div>
-                    </div>                    
-                </div>
-                <div class="grid_4">
-                    <div class="outside">
-                        <div class="photo">
-                            <img src="image/member1shadowr.jpg">
-                        </div>
-                        <div class="content">
-                            <p>美國哥倫比亞大學教育傳播博士</p>
-                            <p>‧網路傳播 <br> ‧網路媒體 <br>‧傳播與哲學</p>
-                            <p>smwu@nccu.edu.tw<br>研究室電話：分機67219</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <div id="menu_side">
@@ -269,12 +193,44 @@ and open the template in the editor.
                 </ul>
             </div>
         </div>
-            <div id="footer">
-                <div class="container_12">
-                    <div class="grid_4">
-                        聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
-                    </div> 
-                </div>
-            </div>             
+        <div id="footer">
+            <div class="container_12">
+                <div class="grid_4">
+                    聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
+                </div> 
+            </div>
+        </div>
+        <script>
+            $(function() {
+                $("#menu").menu();
+            });
+        </script>
+        <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
+        <script>
+            $(function() {
+                Parse.initialize("LO28TRXHBIC7zQTwO3OYhHcf66g8j46ux7XXc2Aq", "x8MYJCuOQsYFDRZK4wwbbkv5CRjbwkG8VrIkQfsx");
+                
+                var Student = Parse.Object.extend("Student");
+
+                var student = new Parse.Query(Student);
+
+                var collection = student.collection();
+                
+                collection.fetch({
+                    success: function(collection) {
+                        collection.each(function(object) {
+                            $("#content").append("<div class=\"grid_3\">" +
+                                    "<a href=\"" + object.get("website") + "\" id=\"" + object.get("student_id") + "\"><p>" + object.get("name") + "</p></a>" +
+                                    "<p>" + object.get("department") + "</p>" +
+                                    "</div>");
+                        });
+                    },
+                    error: function(collection, error) {
+                        // The collection could not be retrieved.
+                    }
+                });
+            });
+
+        </script>
     </body>
 </html>
