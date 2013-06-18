@@ -160,6 +160,11 @@ and open the template in the editor.
                 background-color: #e0d9cb;
                 font-size: 14px;
             }
+			#login{
+                position: fixed;
+                top: 20px;
+                right: 20px;
+            }
         </style>
     </head>
     <body>
@@ -289,19 +294,13 @@ and open the template in the editor.
                 <div class="grid_12" id="news">
                     <div id="event-content">
                         <h3 class="events" style="font-family: '微軟正黑體';">最新消息</h3>
-                        <div class="event-header">看更多</div>
+                        <div class="event-header"><a href="news.html">看更多</a></div>
                         <!-- 要把它放在最新消息右邊-->
-                        <table>
-                            <tr class="row1">
-                                <td style="width: 100px">05/01</td>
-                                <td style="width: 500px" class="link" target="frame"><a href="http://www.getfresh.org.tw/index.aspx"> 第三屆經濟部搶鮮大賽：系統整合實作及創意發想兩類</a></td>
-                            </tr>
-                            <tr class="row2">
-                                <td style="width: 100px">05/06</td>
-                                <td style="width: 500px" class="link" target="frame"><a href="http://moltke.cc.nccu.edu.tw/Registration/registration.do?action=conferenceInfo&conferenceID=X06495"> 第三屆數位內容與科技學士學分學程招生說明會</a></td>
-                            </tr>
+                        <table id="news_content">
+
                         </table>
                     </div>           
+                </div>           
                 </div>
             </div>
            
@@ -313,5 +312,44 @@ and open the template in the editor.
                     </div> 
                 </div>
         </div>
+		<div id="login">
+            <a href="login.html">登入</a>
+        </div>
+		<script>
+            $(function() {
+                Parse.initialize("LO28TRXHBIC7zQTwO3OYhHcf66g8j46ux7XXc2Aq", "x8MYJCuOQsYFDRZK4wwbbkv5CRjbwkG8VrIkQfsx");
+                var News = Parse.Object.extend("News");
+
+//                $("#news_content").empty();
+//                $("#news_content").append("<tr><th>Name</th><th>Email</th></tr>");
+
+                var news = new Parse.Query(News);
+                news.descending("date");
+                news.limit(3);
+
+                var collection = news.collection();
+                collection.fetch({
+                    success: function(collection) {
+                        collection.each(function(object) {
+
+                            var year = object.get("date").getFullYear();
+                            var month = object.get("date").getMonth();
+                            var date = object.get("date").getDate();
+                            var date = year + "-" + month + "-" + date;
+
+                            $("#news_content").append("<tr id=" + object.id + ">\n\
+                                <td>" + object.get("type") + "</td>\n\
+                                <td><a href=\"" + object.get("website") + "\">" + object.get("title") + "</a></td>\n\
+                                <td>" + date + "</td>\n\
+                                </tr>");
+
+                        });
+                    },
+                    error: function(collection, error) {
+                        // The collection could not be retrieved.
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
