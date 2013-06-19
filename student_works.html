@@ -33,9 +33,7 @@ and open the template in the editor.
                 font-family: '微軟正黑體';
                 background-image: url(image/bkground.png);
             }
-            header{
-                margin: 10px;
-            }
+
             .head{
                 border-top: solid;
                 border-bottom: solid;
@@ -43,11 +41,6 @@ and open the template in the editor.
                 margin-bottom: 10px;
                 background-color:#FFF;
             }
-
-            image{
-                height: 80%;
-            } 
-
             /*clock*/
             #clockContainer {
                 width: 120px;
@@ -72,9 +65,6 @@ and open the template in the editor.
                 height: 120px;
                 top: 0px;
                 left: 0px;
-                display: list-item;
-                text-align: -webkit-match-parent;
-                margin-left: 0px;
             }
 
             #sec {
@@ -91,68 +81,60 @@ and open the template in the editor.
                 background: url(image/clock_hours.png);
                 z-index: 1;
             }
-            /*clock end*/            #content{
-                background-color: white;
-            }            
-            #menu_side{
-                position: fixed;
-                top: 230px;
-                left: 50px;
-                width: auto;            
+
+            li{
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-left: 0px;
             }
-            ul{
-                width: 100px;
-            }
-            .outside{
-                background-color: white;
-                margin: 10px;
-            }
-            .photo{
-                margin-left: 15px;
-            }
-            .content{
-                color: #606060;
-            }
-            p{
-                margin-left: 15px;
-            }
-            .content:hover{
-                background-color:#C0C0C0;
-                color:#FFFFFF;
-                -o-transition: color .10s linear;
-                -webkit-transition: color .10s linear;
-                -moz-transition: color .10s linear;
-                transition:  color .10s linear;			
-            }
+            /*clock end*/
+
             #footer{
                 background-color: #e0d9cb;
                 font-size: 14px;
             }
-
         </style>
-        <script>
-            $(function() {
-                $("#menu").menu();
-            });
-        </script>
         <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
-        <script>
+        <script type="text/javascript">
             $(function() {
+//            alert('location.href: ' + location.href);
+                //輸出値為 location.href: http://www.wibibi.com/test.html?tid=222#333
+//                    alert('location.protocol: ' + location.protocol);
+                //輸出値為 location.protocol: http:
+//                    alert('location.hostname: ' + location.hostname);
+                //輸出値為 location.hostname: www.wibibi.com
+//                    alert('location.host: ' + location.host);
+                //輸出値為 location.host: www.wibibi.com
+//                    alert('location.port: ' + location.port);
+                //輸出値為 80
+//                    alert('location.pathname: ' + location.pathname);
+                //輸出値為 location.pathname: /test.html
+///////////////                alert('location.search: ' + location.search);
+                //輸出値為 location.search: ?tid=222
+//                    alert('location.hash: ' + location.hash);
+                //輸出値為 location.hash: #333
+
+                var student_id = location.search;
+                var index = student_id.indexOf("=") + 1;
+                student_id = student_id.substr(index);
+                student_id = parseInt(student_id,10);
+                
                 Parse.initialize("LO28TRXHBIC7zQTwO3OYhHcf66g8j46ux7XXc2Aq", "x8MYJCuOQsYFDRZK4wwbbkv5CRjbwkG8VrIkQfsx");
-
-                var Student = Parse.Object.extend("Student");
-
-                var student = new Parse.Query(Student);
-
-                var collection = student.collection();
+                var Works = Parse.Object.extend("Works");
+                var works = new Parse.Query(Works);
+                works.equalTo("student_id", student_id);
+                var collection = works.collection();
 
                 collection.fetch({
                     success: function(collection) {
                         collection.each(function(object) {
-                            $("#content").append("<div class=\"grid_3\">" +
-                                    "<a href=\"student_works?=" + object.get("student_id") + "\" id=\"" + object.get("student_id") + "\"><p>" + object.get("name") + "</p></a>" +
-                                    "<p>" + object.get("department") + "</p>" +
-                                    "</div>");
+
+                            $("#works").append("<tr name=\"" + object.id + "\">\n\
+                        <td><a href=\"" + object.get("youtube") + "\">" + object.get("name") + "</td>\n\
+                        <td>" + object.get("class") + "</td>\n\
+                        <td>" + object.get("author") + "</td>\n\
+                        </tr>");
+
                         });
                     },
                     error: function(collection, error) {
@@ -160,7 +142,6 @@ and open the template in the editor.
                     }
                 });
             });
-
         </script>
     </head>
     <body>
@@ -207,21 +188,11 @@ and open the template in the editor.
             </div>
 
             <div id="content">
-
-            </div>
-
-            <div id="menu_side">
-                <ul id="menu">
-                    <li><a href="member_teacher.html">教師</a></li>
-                    <li><a href="member_assistant.html">助教</a></li>
-                    <li>
-                        <a>學生</a>
-                        <ul>
-                            <li><a href="member_student100.html">第一屆</a></li>
-                            <li><a href="member_student101.html">第二屆</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="grid_12">
+                    <table id="works">
+                        <tr><th>作品名稱</th><th>課程名稱</th><th>學生姓名</th></tr>
+                    </table>
+                </div>
             </div>
         </div>
         <div id="footer">
@@ -231,6 +202,6 @@ and open the template in the editor.
                 </div> 
             </div>
         </div>
-
+        <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
     </body>
 </html>
