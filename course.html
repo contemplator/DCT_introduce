@@ -49,9 +49,8 @@ and open the template in the editor.
                 text-align: center;
             }
             table{
-                border-radius:10px;
+                border-radius:0px;
                 background-color: white;
-                border-radius:10px;
             }
         /*clock*/
             #clockContainer {
@@ -100,55 +99,79 @@ and open the template in the editor.
             
             /*clock end*/   
 
+
+/*table*/
             #coursetable{
-                background:url("image/emozionale_bg.png") no-repeat center bottom;
-                margin-bottom:20px; 
+                background:url(image/emozionale_bg.png) no-repeat center bottom;
+                margin-bottom:0px; 
                 border-radius:0; 
                 padding: 0; 
                 position:relative; 
             }
-            #menu_side{
-                position: fixed;
-                top: 230px;
-                left: 10px;
-                width: auto;
 
-            }
-
-
-            #coursetable h3{
-                padding: 10px;
-                border-bottom: 1px dotted; 
-                border-left:  1px dotted;
-            }
-            #coursetable h4{
-                font-size: 17px;
-            }
-           
+/* table*/          
            #footer{
                 margin-top: 30px;
                 background-color: #e0d9cb;
                 font-size: 14px;
                 margin-bottom:20px; 
             }
-            #content{
-                background-color: white;
+            #content #detail h3{
+                padding-top: 20px;
+                border-top: 1px dotted;
+                display: block;
+                text-align: center;
+                font-size: 20px;
             }
-/*            .s1{
-                position: relative ;
-                bottom: -29px;
-                left: 5px;
-            }*/
+            #content #detail{
+                margin-left: 25px;
 
-
+            }            
+            .option1{
+            background-color: #CCCCCC;
+            display: block;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 15px;
+            -webkit-transition:all 0.3s 0s ease-out;
+            transition:all 0.3s 0s ease-out;
+            text-decoration:none;
+            }
+            .option2{
+            background-color: white;
+            display: block;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 5px;
+            -webkit-transition:all 0.3s 0s ease-out;
+            transition:all 0.3s 0s ease-out;
+            text-decoration:none;
+            color:black;
+            }
+            .option3{
+            background-color: white;
+            display: block;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 5px;
+            -webkit-transition:all 0.3s 0s ease-out;
+            transition:all 0.3s 0s ease-out;
+            text-decoration:none;
+            color:black;
+        }               
         </style>
-        <script>
-            $(function() {
-                $("#menu").menu();
-            });
-        </script>
     </head>
     <body>
+
        <div class="container_12">
             <div id="header">
                 <div class="grid_12 head">                   
@@ -190,17 +213,31 @@ and open the template in the editor.
                     </a>
                 </nav>
             </div>
-         <div id="content">
-                <div class="grid_12" id="coursetable">
-                    <h3>核心必修</h3>
-                    <h4>共19學分</h4>
+
+            <div id="content" >
+                <div id="menu_side" class="grid_2">
+                    <div>   
+                        <ul id="menu">
+                            <li><a href="course.html" class="option1">核心必修</a></li>
+                            <li><a href="course_2.html" class="option2">基礎群修-內容與設計</a></li>
+                            <li><a href="course_3.html" class="option3">基礎群選-科技</a></li>
+                        </ul>
+                    </div>
+                        
+                    <div id="detail">
+                        <h3>核心必修</h3>
+                        <p>共16學分</p>
+                    </div>
+
+                </div>
+                <div class="grid_10" id="coursetable">
                     <br>
                     <table>
                         <tr>
-                            <th style="width: 200px;">課名</th>
-                            <th style="width: 100px;">學分數</th>
-                            <th style="width: 100px;">開課年級</th>
-                            <th style="width: 600px;">課程說明</th>
+                            <th style="width: 20%;">課名</th>
+                            <th style="width: 10%;">學分數</th>
+                            <th style="width: 10%;">開課年級</th>
+                            <th style="width: 60%;">課程說明</th>
                         </tr>
                         <tr>
                             <td><p>美學概論</p></td>
@@ -248,20 +285,13 @@ and open the template in the editor.
                         </tr>
 
                     
-
-                    </table>
+               </table>
                 </div>
            
-<!--             <img src="image/emozionale_bg.png" class="s1">                 
- -->            </div>
-            
-            <div id="menu_side">
-                <ul id="menu">
-                    <li><a href="course.html">核心必修</a></li>
-                    <li><a href="course_2.html">基礎群修-內容與設計</a></li>
-                    <li><a href="course_3.html">基礎群選-科技</a></li>
-                </ul>
+                            
             </div>
+            
+
             </div>  
 
             <div id="footer">

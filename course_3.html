@@ -106,27 +106,65 @@ and open the template in the editor.
                 background-color: white;
                 border-radius:10px;
             }
-            #menu_side{
-                position: fixed;
-                top: 230px;
-                left: 10px;
-                width: auto;
-            }
-            #coursetable{
+              #coursetable{
                 background:url("image/emozionale_bg.png") no-repeat center bottom;
-                margin-bottom:20px; 
+                margin-bottom:0px; 
                 border-radius:0; 
                 padding: 0; 
                 position:relative; 
             }
-            #coursetable h3{
-                padding: 10px;
-                border-bottom: 1px dotted; 
-                border-left:  1px dotted;
+           #content #detail h3{
+                padding-top: 20px;
+                border-top: 1px dotted;
+                display: block;
+                text-align: center;
+                font-size: 20px;
             }
-            #coursetable h4{
-                font-size: 17px;
-            }           
+            #content #detail{
+                margin-left: 25px;
+
+            }            
+            .option1{
+            background-color: white;
+            display: block;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 15px;
+            -webkit-transition:all 0.3s 0s ease-out;
+            transition:all 0.3s 0s ease-out;
+            text-decoration:none;
+            }
+            .option2{
+            background-color: white;
+            display: block;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 5px;
+            -webkit-transition:all 0.3s 0s ease-out;
+            transition:all 0.3s 0s ease-out;
+            text-decoration:none;
+            color:black;
+            }
+            .option3{
+            background-color: #cccccc;
+            display: block;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 5px;
+            -webkit-transition:all 0.3s 0s ease-out;
+            transition:all 0.3s 0s ease-out;
+            text-decoration:none;
+            color:black;
+        }               
            #footer{
                 margin-top: 30px;
                 background-color: #e0d9cb;
@@ -135,11 +173,6 @@ and open the template in the editor.
             }
 
         </style>
-        <script>
-            $(function() {
-                $("#menu").menu();
-            });
-        </script>
     </head>
     <body>
        <div class="container_12">
@@ -185,9 +218,22 @@ and open the template in the editor.
             </div>
 
             <div id="content">
-                <div class="grid_12" id="coursetable">
-                    <h3>基礎群選-科技</h3>
-                    <h4>至少 18 學分，資訊設計與資訊科技類課程至少各需選修 6 學分</h4>
+                 <div id="menu_side" class="grid_2">
+                    <div>   
+                        <ul id="menu">
+                            <li><a href="course.html" class="option1">核心必修</a></li>
+                            <li><a href="course_2.html" class="option2">基礎群修-內容與設計</a></li>
+                            <li><a href="course_3.html" class="option3">基礎群選-科技</a></li>
+                        </ul>
+                    </div>
+                        
+                    <div id="detail">
+                        <h3>基礎群選-科技</h3>
+                        <p>至少 18 學分，資訊設計與資訊科技類課程至少各需選修 6 學分</p>
+                    </div>
+
+                </div>
+                <div class="grid_10" id="coursetable">
                     <br>
                     <table>
                         <tr>
@@ -238,13 +284,6 @@ and open the template in the editor.
                 </div>
             </div>
             
-            <div id="menu_side">
-                <ul id="menu">
-                    <li><a href="course.html">核心必修</a></li>
-                    <li><a href="course_2.html">基礎群修-內容與設計</a></li>
-                    <li><a href="course_3.html">基礎群選-科技</a></li>
-                </ul>
-            </div>
         </div>
             <div id="footer">
                 <div class="container_12">
