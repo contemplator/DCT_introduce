@@ -13,7 +13,7 @@ and open the template in the editor.
         <script src="js/jquery-ui.js"></script>
         <link href="css/jquery-ui.css" rel="stylesheet">
 
-        <!--bootstrap-->d
+        <!--bootstrap-->
         <!-- <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
         <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <!-- <link href="bootstrap/css/bootstrap.css" rel="stylesheet"> -->
@@ -48,6 +48,7 @@ and open the template in the editor.
         <!-- Include mousewheel dependancies and app files -->
         <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
         <script src="js/app.js" type="text/javascript"></script>
+		<script src="js/clock.js"></script>
 
         <style>
             @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
@@ -60,9 +61,70 @@ and open the template in the editor.
                 font-family: '微軟正黑體';
                 background-image: url(image/bkground.png);           
              }
+			 h1{
+				font-family: '微軟正黑體';
+				color: #FEFFAF;
+				text-align:center;
+			 }
             header{
                 margin: 10px;
-            }            
+            } 
+			.head{
+                border-top: solid;
+                border-bottom: solid;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color:#FFF;
+            }
+
+ /*clock*/
+            #clockContainer {
+                width: 120px;
+                height: 120px;
+               position:relative;
+                top: 5px;
+                left: 0px;    
+            }
+
+            #clock {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    margin: 0px;
+                    background: url(image/clock.jpg) 0 0 no-repeat;
+                    list-style: none;
+            }
+
+            #sec, #min, #hour {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    top: 0px;
+                    left: 0px;
+            }
+
+            #sec {
+                    background: url(image/clock_seconds.png);
+                    z-index: 3;
+            }
+
+            #min {
+                    background: url(image/clock_minutes.png);
+                    z-index: 2;
+            }
+
+            #hour {
+                    background: url(image/clock_hours.png);
+                    z-index: 1;
+            }
+
+            li{
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-left: 0px;
+            }
+            /*clock end*/
+			
             image{
                 height: 80%;
             }
@@ -156,8 +218,15 @@ and open the template in the editor.
     <body>
         <div class="container_12">
             <div id="header">
-                <div class="grid_12">
-                    <a href="index.html"><img src="image/header.jpg" alt="" /></a>
+                <div class="grid_12 head">
+                    <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
+                    <div id="clockContainer" class="grid_3">
+                        <ul id="clock">
+                            <li id="sec"></li>
+                            <li id="hour"></li>
+                            <li id="min"></li>
+                        </ul>
+                    </div>
                 </div>
                 <div id="nav-bar" class="grid_12">
                     <nav class="main-nav" id="main-nav">
@@ -190,12 +259,13 @@ and open the template in the editor.
             </div>
 
             <div id="content">
-                <div class="grid_12">
+                <div class="grid_12 showall">
                     <div class="pageWrapper">
-                        <br>
-                        <h1>點選相簿即可看到更多照片！</h1>
-                        <br>
+                        
                         <div class="demo">
+							<br>
+							<h1>點選相簿即可看到更多照片！</h1>
+							<br>
 
                             <div class="wrapper">
                                 <div id="coverflow">
@@ -214,14 +284,17 @@ and open the template in the editor.
                             </div>
 
                             <div id='slider'></div>
+							
+							
                         </div>
                         <div class="listholder">
-                        </div>
+						</div>
+						<div class="albshow grid_12">                    
+						</div>
+						
                     </div>
                 </div>
-                <div class="albshow grid_12">
-                    
-                </div>
+
                 <div>
                     <img src="image/bottom.png">
                 </div> 
