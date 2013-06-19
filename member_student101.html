@@ -130,7 +130,38 @@ and open the template in the editor.
             }
 
         </style>
+        <script>
+            $(function() {
+                $("#menu").menu();
+            });
+        </script>
+        <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
+        <script>
+            $(function() {
+                Parse.initialize("LO28TRXHBIC7zQTwO3OYhHcf66g8j46ux7XXc2Aq", "x8MYJCuOQsYFDRZK4wwbbkv5CRjbwkG8VrIkQfsx");
 
+                var Student = Parse.Object.extend("Student");
+
+                var student = new Parse.Query(Student);
+
+                var collection = student.collection();
+
+                collection.fetch({
+                    success: function(collection) {
+                        collection.each(function(object) {
+                            $("#content").append("<div class=\"grid_3\">" +
+                                    "<a href=\"student_works?=" + object.get("student_id") + "\" id=\"" + object.get("student_id") + "\"><p>" + object.get("name") + "</p></a>" +
+                                    "<p>" + object.get("department") + "</p>" +
+                                    "</div>");
+                        });
+                    },
+                    error: function(collection, error) {
+                        // The collection could not be retrieved.
+                    }
+                });
+            });
+
+        </script>
     </head>
     <body>
         <div class="container_12">
@@ -200,37 +231,6 @@ and open the template in the editor.
                 </div> 
             </div>
         </div>
-        <script>
-            $(function() {
-                $("#menu").menu();
-            });
-        </script>
-        <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
-        <script>
-            $(function() {
-                Parse.initialize("LO28TRXHBIC7zQTwO3OYhHcf66g8j46ux7XXc2Aq", "x8MYJCuOQsYFDRZK4wwbbkv5CRjbwkG8VrIkQfsx");
-                
-                var Student = Parse.Object.extend("Student");
 
-                var student = new Parse.Query(Student);
-
-                var collection = student.collection();
-                
-                collection.fetch({
-                    success: function(collection) {
-                        collection.each(function(object) {
-                            $("#content").append("<div class=\"grid_3\">" +
-                                    "<a href=\"" + object.get("website") + "\" id=\"" + object.get("student_id") + "\"><p>" + object.get("name") + "</p></a>" +
-                                    "<p>" + object.get("department") + "</p>" +
-                                    "</div>");
-                        });
-                    },
-                    error: function(collection, error) {
-                        // The collection could not be retrieved.
-                    }
-                });
-            });
-
-        </script>
     </body>
 </html>
