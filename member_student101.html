@@ -27,14 +27,12 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" media="all" href="960_min/text.css" />
         <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
         <link href="css/nav_css.css" rel="stylesheet">
+        <script src="js/clock.js"></script>
 
         <style>
             body{
                 font-family: '微軟正黑體';
                 background-image: url(image/bkground.png);
-            }
-            header{
-                margin: 10px;
             }
             .head{
                 border-top: solid;
@@ -43,11 +41,6 @@ and open the template in the editor.
                 margin-bottom: 10px;
                 background-color:#FFF;
             }
-
-            image{
-                height: 80%;
-            } 
-
             /*clock*/
             #clockContainer {
                 width: 120px;
@@ -91,14 +84,9 @@ and open the template in the editor.
                 background: url(image/clock_hours.png);
                 z-index: 1;
             }
-            /*clock end*/            #content{
+            /*clock end*/             
+            #content{
                 background-color: white;
-            }            
-            #menu_side{
-                position: fixed;
-                top: 230px;
-                left: 50px;
-                width: auto;            
             }
             ul{
                 width: 100px;
@@ -125,18 +113,86 @@ and open the template in the editor.
                 transition:  color .10s linear;			
             }
             #footer{
+                margin-top: 30px;
                 background-color: #e0d9cb;
                 font-size: 14px;
+                margin-bottom:20px; 
             }
-            table{
-                border:0px;
-                border-collapse: collapse;
+            .teacher{
+                background-color: white;
+                width: 100px;
+                display: block;
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-top: 5px;
+                -webkit-transition:all 0.3s 0s ease-out;
+                transition:all 0.3s 0s ease-out;
+                text-decoration:none;
+                color:black;
+            }
+            .assistant{
+                background-color: white;
+                width: 100px;
+                display: block;
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-top: 15px;
+                -webkit-transition:all 0.3s 0s ease-out;
+                transition:all 0.3s 0s ease-out;
+                text-decoration:none;
+                color: black;
+            }
+            .student0{
+                cursor:pointer;
+                background-color: #CCCCCC;
+                width: 100px;
+                display: block;
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-top: 5px;
+                -webkit-transition:all 0.3s 0s ease-out;
+                transition:all 0.3s 0s ease-out;
+                text-decoration:none;
+                color:black;
+            }
+            .student1{
+                background-color: white;
+                width: 90px;
+                display: block;
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-top: 5px;
+                -webkit-transition:all 0.3s 0s ease-out;
+                transition:all 0.3s 0s ease-out;
+                text-decoration:none;
+                color:black;
+                z-index: 1000;
             }
         </style>
-        <script>
-            $(function() {
-                $("#menu").menu();
-            });
+        <script type='text/javascript'>
+            var boo = 0;
+            function showMenu() {
+                if (!boo) {
+                    var x = document.getElementById("minMenu").hidden = false;
+                    boo = 1;
+                }
+                else {
+                    var x = document.getElementById("minMenu").hidden = true;
+                    boo = 0;
+                }
+            }
         </script>
         <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
         <script>
@@ -148,14 +204,15 @@ and open the template in the editor.
                 var student = new Parse.Query(Student);
 
                 var collection = student.collection();
-
+                var i = 0;
                 collection.fetch({
                     success: function(collection) {
                         collection.each(function(object) {
-                            $("#content").append("<div class=\"grid_3\">" +
+                            $("#list").append("<div style=\"width:140px; float:left;\">" +
                                     "<a href=\"student_works?=" + object.get("student_id") + "\" id=\"" + object.get("student_id") + "\"><p>" + object.get("name") + "</p></a>" +
                                     "<p>" + object.get("department") + "</p>" +
                                     "</div>");
+
                         });
                     },
                     error: function(collection, error) {
@@ -170,7 +227,7 @@ and open the template in the editor.
     <body>
         <div class="container_12">
             <div id="header">
-                <div class="grid_12 head">                   
+                <div class="grid_12 head">
                     <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
                     <div id="clockContainer" class="grid_3">
                         <ul id="clock">
@@ -180,227 +237,70 @@ and open the template in the editor.
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div id="nav-bar" class="grid_12">
-                <nav class="main-nav" id="main-nav">
-                    <a href="index.html" class="home link">
-                        <span class="icon-home" aria-hidden="true"></span>首頁
-                    </a>
-                    <a href="introduce.html" class="forums link">
-                        <span class="icon-star" aria-hidden="true"></span>認識學程
-                    </a>
-                    <a href="member_teacher.html" class="snippets link">
-                        <span class="icon-user" aria-hidden="true"></span>成員
-                    </a>
-                    <a href="course.html" class="gallery link">
-                        <span class="icon-book" aria-hidden="true"></span>課程
-                    </a>
-                    <a href="recruit.html" class="videos link">
-                        <span class="icon-th-list" aria-hidden="true"></span>招生訊息
-                    </a>
-                    <a href="activities.html" class="demos link">
-                        <span class="icon-camera" aria-hidden="true"></span>活動照片
-                    </a>
-                    <a href="/" class="lodge link">
-                        <span class="icon-picture" aria-hidden="true"></span>學生作品
-                    </a>
-                    <a href="faq_apply.html" class="lodge link">
-                        <span class="icon-question-sign" aria-hidden="true"></span>常見問題
-                    </a>
-                </nav>
+
+                <div id="nav-bar" class="grid_12">
+                    <nav class="main-nav" id="main-nav">
+                        <a href="index.html" class="home link">
+                            <span class="icon-home" aria-hidden="true"></span>首頁
+                        </a>
+                        <a href="introduce.html" class="forums link">
+                            <span class="icon-star" aria-hidden="true"></span>認識學程
+                        </a>
+                        <a href="member_teacher.html" class="snippets link">
+                            <span class="icon-user" aria-hidden="true"></span>成員
+                        </a>
+                        <a href="course.html" class="gallery link">
+                            <span class="icon-book" aria-hidden="true"></span>課程
+                        </a>
+                        <a href="recruit.html" class="videos link">
+                            <span class="icon-th-list" aria-hidden="true"></span>招生訊息
+                        </a>
+                        <a href="activities.html" class="demos link">
+                            <span class="icon-camera" aria-hidden="true"></span>活動照片
+                        </a>
+                        <a href="masterpiece/masterpiece.html" class="lodge link">
+                            <span class="icon-picture" aria-hidden="true"></span>學生作品
+                        </a>
+                        <a href="faq_apply.html" class="lodge link">
+                            <span class="icon-question-sign" aria-hidden="true"></span>常見問題
+                        </a>
+                    </nav>
+                </div>
             </div>
 
             <div id="content">
+                <div id="menu_side" class="grid_2" style="margin-top: 30px;">
+                    <div>   
+                        <ul id="menu">
+                            <li><a href="member_teacher.html" class="teacher">教師</a></li>
+                            <li><a href="member_assistant.html" class="assistant">助教</a></li>
+                            <li>
+                                <a class="student0" onclick="showMenu()">學生</a>
+                            <dir id="minMenu" hidden=true>
+                                <div><a href="member_student100.html" class="student1">第一屆</a></div>
+                                <div><a href="member_student101.html" class="student1">第二屆</a></div>
 
-            </div>
+                            </dir>
 
-            <div id="menu_side">
-                <ul id="menu">
-                    <li><a href="member_teacher.html">教師</a></li>
-                    <li><a href="member_assistant.html">助教</a></li>
-                    <li>
-                        <a>學生</a>
-                        <ul>
-                            <li><a href="member_student100.html">第一屆</a></li>
-                            <li><a href="member_student101.html">第二屆</a></li>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                <div class="grid_10" style="font-size: 24px; margin: 20px 10px;">101學年度</div>
+                <div id="list" class="grid_10">
+                    
+                </div>
             </div>
         </div>
-<div id="main" class="container_12">
-        <div style="font-size: 24px; margin: 20px 10px;">100學年度</div>
-        <table>
-            <tbody >
-                <tr>
-                    <td>
-                        洪湛閎<br/>中文二甲
-                    </td>
-                    <td>
-                        黃惠菁<br/>中文三甲
-                    </td>
-                    <td>
-                        陳柏源<br/>教育三
-                    </td>
-                    <td>
-                        王馨瑩<br/>教育三
-                    </td>
-                    <td>
-                        曾子寧<br/>教育三
-                    </td>
-                    <td>
-                        藍  萱<br/>歷史二
-                    </td>
-                    <td>
-                        陳瑀旋<br/>哲學二
-                    </td>
-                    <td>
-                        吳伯山<br/>外交三
-                    </td>
-                    <td>
-                        湯浩澤<br/>社會三
-                    </td>
-                    <td>
-                        陳品樺<br/>公行三
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        張雅棓<br/>公行四
-                    </td>
-                    <td>
-                        林廷勳<br/>地二土管
-                    </td>
-                    <td>
-                        黃維翊<br/>地二土測
-                    </td>
-                    <td>
-                        林郁霖<br/>地三土管
-                    </td>
-                    <td>
-                        曾紀昀<br/>經濟二甲
-                    </td>
-                    <td>
-                        曾怡萱<br/>經濟二乙
-                    </td>
-                    <td>
-                        劉  璞<br/>民族二
-                    </td>
-                    <td>
-                        郭奕涵<br/>國貿三乙
-                    </td>
-                    <td>
-                        蘇彥君<br/>統計三
-                    </td>
-                    <td>
-                        洪維均<br/>資管三乙
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        湯智鈞<br/>資管三乙
-                    </td>
-                    <td>
-                        張家閩<br/>資管三乙
-                    </td>
-                    <td>
-                        陳姿伶<br/>新聞三甲
-                    </td>
-                    <td>
-                        李潔斯<br/>新聞三乙
-                    </td>
-                    <td>
-                        陳思宇<br/>廣告二
-                    </td>
-                    <td>
-                        林岱儀<br/>廣告二
-                    </td>
-                    <td>
-                        李家儀<br/>廣告二
-                    </td>
-                    <td>
-                        陳盈秀<br/>廣告二
-                    </td>
-                    <td>
-                        杜宜霖<br/>廣告三
-                    </td>
-                    <td>
-                        黃迪諾<br/>廣電二
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        魏劭宇<br/>廣電二
-                    </td>
-                    <td>
-                        吳  亭<br/>廣電三
-                    </td>
-                    <td>
-                        游雅茜<br/>廣電三
-                    </td>
-                    <td>
-                        葉思佑<br/>傳播學二
-                    </td>
-                    <td>
-                        李依庭<br/>傳播學二
-                    </td>
-                    <td>
-                        郭姿佑<br/>英文三甲
-                    </td>
-                    <td>
-                        王愷怡<br/>英文三乙
-                    </td>
-                    <td>
-                        王嘉琳<br/>阿文二
-                    </td>
-                    <td>
-                        曾煥博<br/>斯語三乙
-                    </td>
-                    <td>
-                        張瑜芳<br/>日文二
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        周比琦<br/>韓文三
-                    </td>
-                    <td>
-                        謝佳恩<br/>歐文德三
-                    </td>
-                    <td>
-                        楊千瑩<br/>歐文西三
-                    </td>
-                    <td>
-                        李孟蓁<br/>資科二
-                    </td>
-                    <td>
-                        莊凱翔<br/>資科三
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>  
 
         <div id="footer">
             <div class="container_12">
-                <div class="grid_4">
+                <div class="grid_4" style="margin: 10px 0px 10px 0px">
                     聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
                 </div> 
+                <div class="grid_12 copyright" style="text-align: center"> 
+                    COPYRIGHT@2013
+                </div>
             </div>
         </div>
 
