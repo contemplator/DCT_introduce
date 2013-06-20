@@ -1,0 +1,321 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>國立政治大學數位內容與科技學士學位學程</title>
+        <link rel="shortcut icon" href="image/icon_DCT.png">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!--jquery-->
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <link href="css/jquery-ui.css" rel="stylesheet">
+
+        <!--bootstrap-->
+        <!-- <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
+        <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <!-- <link href="bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+
+        <!--other-->
+        <!-- <link href="css/animate-custom.css" rel="stylesheet"> -->
+        <link rel="stylesheet" type="text/css" media="all" href="960_min/reset.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="960_min/text.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
+        <link href="css/nav_css.css" rel="stylesheet">
+
+        <!--cover flow-->
+        <!-- Include theme -->
+        <link type="text/css" href="css/jquery-ui-1.8.5.custom.css" rel="Stylesheet" />
+
+        <!-- Include jQuery and UI -->
+        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.9.custom.min.js"></script>
+
+        <!-- Include jQuery CoverFlow widget -->
+        <script type="text/javascript" src="js/ui.coverflow.js"></script>
+
+        <link type="text/css" href="css/activities.css" rel="stylesheet" />
+
+        <!-- Transformie is a plugin that makes webkit's CSS transforms work in Internet Explorer -->
+        <script src="js/sylvester.js" type="text/javascript"></script>
+        <script src="js/transformie.js" type="text/javascript"></script>
+
+        <!-- Include mousewheel dependancies and app files -->
+        <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+		<script src="js/clock.js"></script>
+
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+            .bottom{
+                margin-left: 10px;
+            }
+
+            .test{
+                height: 200px;
+            }
+
+
+            body{
+                font-family: '微軟正黑體';
+                background-image: url(image/bkground.png);           
+             }
+			 h1{
+				font-family: '微軟正黑體';
+				color: #4186D3;
+				text-align:center;
+			 }
+            header{
+                margin: 10px;
+            } 
+			.head{
+                border-top: solid;
+                border-bottom: solid;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color:#FFF;
+            }
+
+ /*clock*/
+            #clockContainer {
+                width: 120px;
+                height: 120px;
+               position:relative;
+                top: 5px;
+                left: 0px;    
+            }
+
+            #clock {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    margin: 0px;
+                    background: url(image/clock.jpg) 0 0 no-repeat;
+                    list-style: none;
+            }
+
+            #sec, #min, #hour {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    top: 0px;
+                    left: 0px;
+            }
+
+            #sec {
+                    background: url(image/clock_seconds.png);
+                    z-index: 3;
+            }
+
+            #min {
+                    background: url(image/clock_minutes.png);
+                    z-index: 2;
+            }
+
+            #hour {
+                    background: url(image/clock_hours.png);
+                    z-index: 1;
+            }
+
+            li{
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-left: 0px;
+            }
+            /*clock end*/
+			
+
+            #footer{
+                background-color: #e0d9cb;
+                font-size: 14px;
+            }
+            .foot{
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+           albshow{
+                width: 940px;
+            }
+
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $(".ab1").click(function(){
+                    $("div.albshow").empty().load($("div#coverflow").find("a.album1").attr("href"));
+                    return false;
+
+                });
+                $(".ab2").click(function(){
+                    $("div.albshow").empty().load($("div#coverflow").find("a.album2").attr("href"));
+                    return false;
+
+                });
+
+                /*$(".link").click(function () {
+                    $("div#container").empty().load($(this).attr('href'));
+                    return false;
+                });*/
+            });
+
+            $(function() {
+
+                var demo = {
+                    yScroll: function(wrapper, scrollable) {
+
+                        var wrapper = $(wrapper), scrollable = $(scrollable),
+                                loading = $('<div class="loading">Loading...</div>').appendTo(wrapper),
+                                internal = null,
+                                images = null;
+                        scrollable.hide();
+                        images = scrollable.find('img');
+                        completed = 0;
+
+                        images.each(function() {
+                            if (this.complete)
+                                completed++;
+                        });
+
+                        if (completed == images.length) {
+                            setTimeout(function() {
+                                loading.hide();
+                                wrapper.css({overflow: 'hidden'});
+                                scrollable.slideDown('slow', function() {
+                                    enable();
+                                });
+                            }, 0);
+                        }
+
+
+                        function enable() {
+                            var inactiveMargin = 99,
+                                    wrapperWidth = wrapper.width(),
+                                    wrapperHeight = wrapper.height(),
+                                    scrollableHeight = scrollable.outerHeight() + 2 * inactiveMargin,
+                                    wrapperOffset = 0,
+                                    top = 0,
+                                    lastTarget = null;
+
+
+                            wrapper.mousemove(function(e) {
+                                lastTarget = e.target;
+                                wrapperOffset = wrapper.offset();
+                                top = (e.pageY - wrapperOffset.top) * (scrollableHeight - wrapperHeight) / wrapperHeight - inactiveMargin;
+                                if (top < 0) {
+                                    top = 0;
+                                }
+                                wrapper.scrollTop(top);
+                            });
+                        }
+                    }
+                }
+
+                demo.yScroll('#scroll-pane', 'ul#sortable');
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container_12">
+            <div id="header">
+                <div class="grid_12 head">
+                    <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
+                    <div id="clockContainer" class="grid_3">
+                        <ul id="clock">
+                            <li id="sec"></li>
+                            <li id="hour"></li>
+                            <li id="min"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="nav-bar" class="grid_12">
+                    <nav class="main-nav" id="main-nav">
+                        <a href="index.html" class="home link">
+                            <span class="icon-home" aria-hidden="true"></span>首頁
+                        </a>
+                        <a href="introduce.html" class="forums link">
+                            <span class="icon-star" aria-hidden="true"></span>認識學程
+                        </a>
+                        <a href="member_teacher.html" class="snippets link">
+                            <span class="icon-user" aria-hidden="true"></span>成員
+                        </a>
+                        <a href="course.html" class="gallery link">
+                            <span class="icon-book" aria-hidden="true"></span>課程
+                        </a>
+                        <a href="recruit.html" class="videos link">
+                            <span class="icon-th-list" aria-hidden="true"></span>招生訊息
+                        </a>
+                        <a href="activities.html" class="demos link">
+                            <span class="icon-camera" aria-hidden="true"></span>活動照片
+                        </a>
+                        <a href="masterpiece/masterpiece.html" class="lodge link">
+                            <span class="icon-picture" aria-hidden="true"></span>學生作品
+                        </a>
+                        <a href="faq_apply.html" class="lodge link">
+                            <span class="icon-question-sign" aria-hidden="true"></span>常見問題
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="content">
+                <div class="grid_12">
+                    <div class="pageWrapper">
+                        
+                        <div class="demo">
+							<br>
+							<h1>Life For Fun!</h1>
+							<br>
+
+                            <div class="wrapper">
+                                <div id="coverflow">
+                                    <img class="ab3" src="actimg/c.jpg" data-artist="ovo" data-album="Plastic Beach"/>
+                                    <img class="ab4" src="actimg/d.jpg" data-artist="ovo" data-album="Plastic Beach"/>
+                                    <img class="ab5" src="actimg/e.png" data-artist="ovo" data-album="Plastic Beach"/>
+                                    <img class="ab1" src="actimg/a.png" data-artist="ovo" data-album="Plastic Beach"/>
+                                    <a class="album1" href="album/album1.html"></a>
+                                    <img class="ab2" src="actimg/b.png" data-artist="ovo" data-album="Come Around Sunshine"/>
+                                    <a class="album2" href="album/album2.html"></a>   
+                                </div>
+                            </div>
+
+                            <div id="imageCaption">
+                                Sample Text
+                            </div>
+
+                            <div id='slider'></div>
+							
+							
+                        </div>
+                        <div class="listholder">
+						</div>
+						<div class="albshow">                    
+						</div>
+						
+                    </div>
+                </div>
+
+                <div>
+                    <img src="image/bottom.png" class="bottom">
+                </div> 
+            </div>
+        </div>
+                <div id="footer">
+                <div class="container_12">
+                    <div class="grid_4 foot">
+                        聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
+                    </div> 
+                    <div class="grid_12 copyright" style="text-align: center"> 
+                        COPYRIGHT@2013
+                    </div>
+                </div>
+        </div>
+
+    </body>
+</html>
