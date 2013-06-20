@@ -214,43 +214,6 @@ and open the template in the editor.
                         </div>
             -->
             <div id="content" class="scrollable">
-
-                <div class="onenews">
-                    <div class="newstitle"><br>102學年度數位內容與科技學士學位學程錄取名單</div>
-                    <div class="reportdate">2013-06-17</div>
-                    <div class="newscontent"><a href="http://dct.cs.nccu.edu.tw/downloads/2013members.pdf">錄取名單</a></div>
-                </div>
-                <div class="onenews">
-                    <div class="newstitle">第三屆數位內容與科技學士學分學程招生口試名單 </div>
-                    <div class="reportdate">2013-06-06</div>
-                    <div class="newscontent"><a href="http://dct.cs.nccu.edu.tw/downloads/1020610_Interview_time.pdf">口試報到時間</a></div>
-                </div>
-                <div class="onenews">
-                    <div class="newstitle">第三屆數位內容與科技學士學分學程招生說明會 </div>
-                    <div class="reportdate">2013-04-24</div>
-                    <div class="newscontent">時間：102/5/6(一) 10:00-12:00<br>報名網址：<a herf="http://moltke.cc.nccu.edu.tw/Registration/registration.do?action=conferenceInfo&conferenceID=X06495">聯合報名系統線上報名</a></div>
-                </div>
-                <div class="onenews">
-                    <div class="newstitle">第三屆經濟部搶鮮大賽</div>
-                    <div class="reportdate">2013-05-01</div>
-                    <div class="newscontent">名稱：第三屆經濟部搶鮮大賽<br>
-                        競賽項目：系統整合實作及創意發想兩類<br>活動詳細內容及報名方法請參考競賽網頁
-                        <br>競賽網頁：<a href="http://www.getfresh.org.tw/index.aspx">
-                            http://www.getfresh.org.tw/index.aspx</a></div>
-                </div>
-                <div class="onenews">
-                    <div class="newstitle">學程第一屆畢業展演[數位密室逃脫]-柏菲瑟‧安德表特 </div>
-                    <div class="reportdate">2013-04-11</div>
-                    <div class="newscontent">時間：5/13(一)~5/20(一)每天各五個場次<br>
-                        競賽項目：系統整合實作及創意發想兩類<br>報名：採【5/1、5/2→羅馬廣場5/8、5/9→麥側攤位】現場報名<br><a href="http://dct.cs.nccu.edu.tw/index.php">更多資訊</a></div>
-                </div>
-                <div class="onenews">
-                    <div class="newstitle">2013文化數位創意加值競賽 </div>
-                    <div class="reportdate">2013-04-24</div>
-                    <div class="newscontent">主辦單位：臺灣資訊傳播學會<br>
-                        承辦單位：靜宜大學資訊傳播工程學系<br>
-                        報名／收件截止：即日起至 102/5/1</div>
-                </div>
                 <div>
                     <table id="news_content"></table>
                 </div>
@@ -289,8 +252,9 @@ and open the template in the editor.
                             var date = year + "-" + month + "-" + date;
                             $("#news_content").append("<div class=\"onenews\">" + 
                                     "<div class=\"newstitle\"><br/>" + object.get("title") + "</div>" +
-                                    "<div class=\"reportdate\"" + object.get("date") + "</div>" + 
-                                    "<div class=\"newscontent\"><a href=\"" + object.get("website") + "\">" + object.get("comment") + "</a></div>" + 
+                                    "<div class=\"reportdate\">" + date + "</div>" + 
+                                    "<div class=\"newscontent\">" + object.get("comment") + "</div>" + 
+                                    "<div class=\"newscontent\"><a href=\"" + object.get("website") + "\">連結</a>" +
                                     "</div>");
 //                            $("#news_content").append("<tr id=" + object.id + ">\n\
 //                        <td>" + object.get("type") + "</td>\n\
