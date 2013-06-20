@@ -5,9 +5,7 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
 <head>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script type="text/javascript" src="yoxview-init.js"></script>
     <script type="text/javascript">
     $(function(){
@@ -17,10 +15,8 @@ and open the template in the editor.
   });
 });
     </script>
+        <script src="js/clock.js"></script>
         <!--jquery-->
-		 <script src="js/jquery-1.9.1.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <link href="css/jquery-ui.css" rel="stylesheet">
 
         <!--bootstrap-->
         <!-- <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
@@ -32,12 +28,19 @@ and open the template in the editor.
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
         <!--other-->
-        <!-- <link href="css/animate-custom.css" rel="stylesheet"> -->
     <link href="css/nav_css.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="all" href="960_min/reset.css" />
     <link rel="stylesheet" type="text/css" media="all" href="960_min/text.css" />
     <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
-	<script src="js/clock.js"></script>
+    
+
+ 
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+
+
     <script>
         $(function() {
             var icons = {
@@ -57,29 +60,89 @@ and open the template in the editor.
         </script>
 
         <style>
+            body{
+                font-family: '微軟正黑體';
+                background-image: url(image/bkground.png);
+            }
 
-		header{
-            margin: 10px;
-        }
-        .head{
-            border-top: solid;
-            border-bottom: solid;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            background-color:#FFF;
-        }
-		.gradename{
+           header{
+                margin: 10px;
+            }
+
+            .head{
+                border-top: solid;
+                border-bottom: solid;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color:#FFF;
+            }
+
+            /*clock*/
+            #clockContainer {
+                width: 120px;
+                height: 120px;
+               position:relative;
+                top: 5px;
+                left: 0px;    
+            }
+
+            #clock {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    margin: 0px;
+                    background: url(image/clock.jpg) 0 0 no-repeat;
+                    list-style: none;
+            }
+
+            #sec, #min, #hour {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    top: 0px;
+                    left: 0px;
+                    display: list-item;
+                   text-align: -webkit-match-parent;
+                   margin-left: 0px;
+            }
+
+            #sec {
+                    background: url(image/clock_seconds.png);
+                    z-index: 3;
+            }
+
+            #min {
+                    background: url(image/clock_minutes.png);
+                    z-index: 2;
+            }
+
+            #hour {
+                    background: url(image/clock_hours.png);
+                    z-index: 1;
+            }
+
+            
+            /*clock end*/   
+
+            #footer{
+                /*z-index: 1;*/
+                margin-top: 1000px;
+                background-color: #e0d9cb;
+                font-size: 14px;
+            }
+
+
+            .gradename{
                 font-family: 'Alef', sans-serif;
                 border-bottom: 1px dotted;
                 border-left: 1px dotted;
-                padding-left:15px;
-                padding-bottom: 5px;
+                margin-bottom:20px; 
+                padding-left:5px;
                 font-size: 24px;
                 color: #C0C0C0;
             }
             .grade{
-
-                border-bottom: 1px dashed;
+                border-bottom: 1px dotted;
                 margin-bottom: 10px;
                 padding-bottom: 10px;
                 padding-top: 10px;
@@ -112,14 +175,14 @@ and open the template in the editor.
                 font-size: 10pt;
                 }
             #yoxview{
-                z-index: 0;
+                z-index: 1;
                 border:none;
+            }
             header{
                 margin: 10px;
             }            
-            image{
+            .image{
                 height: 80%;
-                border-top: 5px;
             }
             .event-header{
                 float: right;
@@ -137,9 +200,9 @@ and open the template in the editor.
     </head>
     <body>
 
-		<div class="container_12">
-            <div id="header">
-                <div class="grid_12 head">
+        <div  class="container_12">
+            <div id="header" >
+                 <div class="grid_12 head">                   
                     <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
                     <div id="clockContainer" class="grid_3">
                         <ul id="clock">
@@ -149,79 +212,78 @@ and open the template in the editor.
                         </ul>
                     </div>
                 </div>
-                
-                <div id="nav-bar" class="grid_12">
+            </div>
+            <div class="row-fluid">
+                <div id="nav-bar" class="span12">
                     <nav class="main-nav" id="main-nav">
-                        <a href="index.html" class="home link">
+                        <a href="http://contemplator.github.io/DCT_introduce/index.html" class="home link">
                             <span class="icon-home" aria-hidden="true"></span>首頁
                         </a>
-                        <a href="introduce.html" class="forums link">
+                        <a href="http://contemplator.github.io/DCT_introduce/introduce.html" class="forums link">
                             <span class="icon-star" aria-hidden="true"></span>認識學程
                         </a>
-                        <a href="member_teacher.html" class="snippets link">
+                        <a href="http://contemplator.github.io/DCT_introduce/member_teacher.html" class="snippets link">
                             <span class="icon-user" aria-hidden="true"></span>成員
                         </a>
-                        <a href="course.html" class="gallery link">
+                        <a href="http://contemplator.github.io/DCT_introduce/course.html" class="gallery link">
                             <span class="icon-book" aria-hidden="true"></span>課程
                         </a>
-                        <a href="recruit.html" class="videos link">
+                        <a href="http://contemplator.github.io/DCT_introduce/recruit.html" class="videos link">
                             <span class="icon-th-list" aria-hidden="true"></span>招生訊息
                         </a>
-                        <a href="activities.html" class="demos link">
+                        <a href="http://contemplator.github.io/DCT_introduce/activities.html" class="demos link">
                             <span class="icon-camera" aria-hidden="true"></span>活動照片
                         </a>
-                        <a href="masterpiece/masterpiece.html" class="lodge link">
+                        <a href="http://contemplator.github.io/DCT_introduce/masterpiece.html" class="lodge link">
                             <span class="icon-picture" aria-hidden="true"></span>學生作品
                         </a>
-                        <a href="faq_apply.html" class="lodge link">
+                        <a href="http://contemplator.github.io/DCT_introduce/faq_apply.html" class="lodge link">
                             <span class="icon-question-sign" aria-hidden="true"></span>常見問題
                         </a>
                     </nav>
                 </div>
             </div>
-			
-			
-			<div id="content" class="container_12">
-				<div class="grid_12">          
-					<div id="yoxview" class="thumbnails grid_12">
-						<div class="grade grid_12">
-							<span class="gradename">Freshman</span><br>
-							<a href="http://www.youtube.com/watch?v=FbqBv7Tz1QY"><img src="workimg/headache.jpg" alt="Jay" title="公公偏頭痛" /></a>
-							<a href="http://www.youtube.com/watch?v=jOxzAsnx9-0"><img src="workimg/rainallnight.jpg" alt="Jay" title="all night raining" /></a>
-							<a href="http://www.youtube.com/watch?v=4j0Fgmsxr-o"><img src="workimg/superman.jpg" alt="Jay" title="superman can't fly" /></a>
-						</div><br>
-						<div class="grade grid_12">
-							<span class="gradename">Sophomore</span><br>
-							<a href="http://www.youtube.com/watch?v=MKNrnSsIwf8"><img src="workimg/BackToPast.jpg" alt="Jay" title="Back to Past" /></a>
-							<a href="http://www.youtube.com/watch?v=Fojxa8jVM9E"><img src="workimg/SunnyDay.jpg" alt="Jay" title="SunnyDay" /></a>
-							<a href="http://www.youtube.com/watch?v=miBGaUagOz8"><img src="workimg/NoMatterLoveYou.jpg" alt="Jay" title="No Matter what I Love You So Much" /></a>
-						</div><br>
-						<div class="grade grid_12">
-							<span class="gradename">Junior</span><br>
-							<a href="http://www.youtube.com/watch?v=Fojxa8jVM9E"><img src="workimg/SunnyDay.jpg" alt="Jay" title="SunnyDay" /></a>
-							<a href="http://www.youtube.com/watch?v=15zk9nO0Kyk"><img src="workimg/YouCanHeard.jpg" alt="Jay" title="You Can Heard" /></a>
-						</div><br>
-						<div class="grade grid_12">
-							<span class="gradename">Senior</span><br>
-							<a href="workimg/ovo.jpg"><img src="workimg/HardToTell.jpg" alt="Jay" title="Hard To Tell" /></a>
-						</div>
-						
-						<!--<a href="workimg/1.jpg"><img src="workimg/1.jpg" alt="First" title="First image" /></a>
-						<a href="workimg/2.jpg"><img src="workimg/2.jpg" alt="Second" title="Second image" /></a>
-						<a href="workimg/media/3.flv"><img src="workimg/3.jpg" alt="Second" title="Second image" /></a>
-						<a href="workimg/4.jpg"><img src="workimg/4.jpg" alt="Second" title="Second image" /></a>
-						<a href="workimg/5.jpg"><img src="workimg/5.jpg" alt="Second" title="Second image" /></a>-->
-					</div>
-				</div>
-			</div>
-
-		<div id="footer">
-                <div class="container_12">
-                    <div class="grid_4">
-                        聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
-                    </div> 
-                </div>
+        </div>  
+        <br>
+</div>
+<div id="content" class="container_12">
+    <div class="grid_12">          
+        <div id="yoxview" class="thumbnails grid_12">
+            <div class="grade grid_12">
+                <span class="gradename">Web Programing</span><br>
+                <a href="http://www.youtube.com/watch?v=FbqBv7Tz1QY"><img src="workimg/headache.jpg" alt="Jay" title="公公偏頭痛" /></a>
+                <a href="http://www.youtube.com/watch?v=jOxzAsnx9-0"><img src="workimg/rainallnight.jpg" alt="Jay" title="all night raining" /></a>
+                <a href="http://www.youtube.com/watch?v=4j0Fgmsxr-o"><img src="workimg/superman.jpg" alt="Jay" title="superman can't fly" /></a>
+            </div><br>
+            <div class="grade grid_12">
+                <span class="gradename">Cross Culture Story</span><br>
+                <a href="http://www.youtube.com/watch?v=MKNrnSsIwf8"><img src="workimg/BackToPast.jpg" alt="Jay" title="Back to Past" /></a>
+                <a href="http://www.youtube.com/watch?v=Fojxa8jVM9E"><img src="workimg/SunnyDay.jpg" alt="Jay" title="SunnyDay" /></a>
+                <a href="http://www.youtube.com/watch?v=miBGaUagOz8"><img src="workimg/NoMatterLoveYou.jpg" alt="Jay" title="No Matter what I Love You So Much" /></a>
+            </div><br>
+            <div class="grade grid_12">
+                <span class="gradename">Basic Programing</span><br>
+                <a href="http://www.youtube.com/watch?v=Fojxa8jVM9E"><img src="workimg/SunnyDay.jpg" alt="Jay" title="SunnyDay" /></a>
+                <a href="http://www.youtube.com/watch?v=15zk9nO0Kyk"><img src="workimg/YouCanHeard.jpg" alt="Jay" title="You Can Heard" /></a>
+            </div><br>
+            <div class="grade grid_12">
+                <span class="gradename">Animation</span><br>
+                <a href="workimg/ovo.jpg"><img src="workimg/HardToTell.jpg" alt="Jay" title="Hard To Tell" /></a>
+            </div>
         </div>
-            
+    </div>
+</div> 
+                
+<div id="footer">
+    <div class="container_12">
+        <div class="grid_4 foot">
+            聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
+        </div> 
+        <div class="grid_12 copyright" style="text-align: center"> 
+            COPYRIGHT@2013
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
