@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
-<head>
-         <title></title>
+    <head>
+        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <!--jquery-->
@@ -25,18 +25,18 @@
         <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
 
         <script src="js/clock.js"></script>
- 
+
         <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
         <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 
-    <style>
-           body{
+        <style>
+            body{
                 font-family: '微軟正黑體';
                 background-image: url(image/bkground.png);
             }
 
-           header{
+            header{
                 margin: 10px;
             }
 
@@ -53,115 +53,115 @@
             }
 
 
-        /*clock*/
+            /*clock*/
             #clockContainer {
                 width: 120px;
                 height: 120px;
-               position:relative;
+                position:relative;
                 top: 5px;
                 left: 0px;    
             }
 
             #clock {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    margin: 0px;
-                    background: url(image/clock.jpg) 0 0 no-repeat;
-                    list-style: none;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                margin: 0px;
+                background: url(image/clock.jpg) 0 0 no-repeat;
+                list-style: none;
             }
 
             #sec, #min, #hour {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    top: 0px;
-                    left: 0px;
-                    display: list-item;
-                   text-align: -webkit-match-parent;
-                   margin-left: 0px;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                top: 0px;
+                left: 0px;
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-left: 0px;
             }
 
             #sec {
-                    background: url(image/clock_seconds.png);
-                    z-index: 3;
+                background: url(image/clock_seconds.png);
+                z-index: 3;
             }
 
             #min {
-                    background: url(image/clock_minutes.png);
-                    z-index: 2;
+                background: url(image/clock_minutes.png);
+                z-index: 2;
             }
 
             #hour {
-                    background: url(image/clock_hours.png);
-                    z-index: 1;
+                background: url(image/clock_hours.png);
+                z-index: 1;
             }
 
-            
+
             /*clock end*/
-        /*bubble*/    
-        .bubble {
-              width: 100%;
-              padding: .5em 1em;
-              line-height: 1.4em;
-              padding: 20px;
-              background-color: #ecf0f1;
-              position: relative;
-              -webkit-border-radius: 8px;
-              text-align: left;
-              display: inline-block; 
-        }
+            /*bubble*/    
+            .bubble {
+                width: 100%;
+                padding: .5em 1em;
+                line-height: 1.4em;
+                padding: 20px;
+                background-color: #ecf0f1;
+                position: relative;
+                -webkit-border-radius: 8px;
+                text-align: left;
+                display: inline-block; 
+            }
 
 
-        .bubble-container {
-          width: 75%;
-          display: block;
-          position: relative;
-          padding-left: 20px;
-          vertical-align: top;
-          display: inline-block; 
-        }
-    
-        .arrow {
-          content: '';
-          display: block;
-          position: absolute;
-          left: 12px;
-          bottom: 25%;
-          height: 0;
-          width: 0;
-          border-top: 20px solid transparent;
-          border-bottom: 20px solid transparent;
-          border-right: 20px solid #ecf0f1; }
+            .bubble-container {
+                width: 75%;
+                display: block;
+                position: relative;
+                padding-left: 20px;
+                vertical-align: top;
+                display: inline-block; 
+            }
 
-        .timeline {
-          width: 760px;
-          display: block;
-          margin: auto;
-          background-color: #FFF;
-          padding-bottom: 2em;
-          }
+            .arrow {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 12px;
+                bottom: 25%;
+                height: 0;
+                width: 0;
+                border-top: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                border-right: 20px solid #ecf0f1; }
 
-          .timeline li {
-            padding: 8px; 
-          }
-          /*bubble*/
-          .information{
-            background-color: white;
-        }
+            .timeline {
+                width: 760px;
+                display: block;
+                margin: auto;
+                background-color: #FFF;
+                padding-bottom: 2em;
+            }
 
-          #footer{
-            margin-top: 30px;
+            .timeline li {
+                padding: 8px; 
+            }
+            /*bubble*/
+            .information{
+                background-color: white;
+            }
+
+            #footer{
+                margin-top: 30px;
                 background-color: #e0d9cb;
                 font-size: 14px;
                 margin-bottom:20px; 
             }
-    </style>
-</head>
-<body>
+        </style>
+    </head>
+    <body>
         <div class="container_12">
             <div id="header">
-                <div class="grid_12 head">                   
+                <div class="grid_12 head">
                     <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
                     <div id="clockContainer" class="grid_3">
                         <ul id="clock">
@@ -171,38 +171,39 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div id="nav-bar" class="grid_12">
-                <nav class="main-nav" id="main-nav">
-                    <a href="index.html" class="home link">
-                        <span class="icon-home" aria-hidden="true"></span>首頁
-                    </a>
-                    <a href="introduce.html" class="forums link">
-                        <span class="icon-star" aria-hidden="true"></span>認識學程
-                    </a>
-                    <a href="member_teacher.html" class="snippets link">
-                        <span class="icon-user" aria-hidden="true"></span>成員
-                    </a>
-                    <a href="course.html" class="gallery link">
-                        <span class="icon-book" aria-hidden="true"></span>課程
-                    </a>
-                    <a href="recruit.html" class="videos link">
-                        <span class="icon-th-list" aria-hidden="true"></span>招生訊息
-                    </a>
-                    <a href="activities.html" class="demos link">
-                        <span class="icon-camera" aria-hidden="true"></span>活動照片
-                    </a>
-                    <a href="masterpiece/masterpiece.html" class="lodge link">
-                        <span class="icon-picture" aria-hidden="true"></span>學生作品
-                    </a>
-                    <a href="faq_apply.html" class="lodge link">
-                        <span class="icon-question-sign" aria-hidden="true"></span>常見問題
-                    </a>
-                </nav>
+
+                <div id="nav-bar" class="grid_12">
+                    <nav class="main-nav" id="main-nav">
+                        <a href="index.html" class="home link">
+                            <span class="icon-home" aria-hidden="true"></span>首頁
+                        </a>
+                        <a href="introduce.html" class="forums link">
+                            <span class="icon-star" aria-hidden="true"></span>認識學程
+                        </a>
+                        <a href="member_teacher.html" class="snippets link">
+                            <span class="icon-user" aria-hidden="true"></span>成員
+                        </a>
+                        <a href="course.html" class="gallery link">
+                            <span class="icon-book" aria-hidden="true"></span>課程
+                        </a>
+                        <a href="recruit.html" class="videos link">
+                            <span class="icon-th-list" aria-hidden="true"></span>招生訊息
+                        </a>
+                        <a href="activities.html" class="demos link">
+                            <span class="icon-camera" aria-hidden="true"></span>活動照片
+                        </a>
+                        <a href="masterpiece/masterpiece.html" class="lodge link">
+                            <span class="icon-picture" aria-hidden="true"></span>學生作品
+                        </a>
+                        <a href="faq_apply.html" class="lodge link">
+                            <span class="icon-question-sign" aria-hidden="true"></span>常見問題
+                        </a>
+                    </nav>
+                </div>
             </div>
 
             <div id="content" class="information grid_12">  
-               <br>
+                <br>
                 <ul class="timeline">
                     <li>
                         <div class="title">
@@ -213,7 +214,7 @@
                             <div class="bubble">
                                 <p>以雙主修方式提供全校同學學習以數位內容與科技為主的第二專長，培養具有人文內涵、資訊設計、及科技實作能力的跨領域人才。</p>
                             </div>
-                            
+
                             <div class="arrow"></div>
                         </div>
                     </li>
@@ -226,7 +227,7 @@
                             <div class="bubble">
                                 <p>本校符合雙主修申請之同學。</p>
                             </div>
-                        <div class="arrow"></div>
+                            <div class="arrow"></div>
                         </div>
                     </li>
                     <li>
@@ -250,7 +251,7 @@
                             <div class="bubble">
                                 <p>本校向以人文社會科學領域見長，具備將學院知識轉化成為數位內容應用知識的學術腹地；另一方面，近年來致力傳播知識、數位內容與資訊科技等相關領域的發展，並於98學年度起設立跨學院的數位內容碩士學位學程，數位內容與科技相關的跨領域教研環境已逐漸成形。</p>
                             </div>
-                            
+
                             <div class="arrow"></div>
                         </div>
                     </li>
@@ -260,15 +261,15 @@
                             <h2>諮詢委員</h2>
                         </div>
                         <div class="bubble-container">
-          
+
                             <div class="bubble">               
-                        <p>施文祥董事長 西基電腦動畫股份有限公司</p>
-                        <p>李政宜總監 和碩聯合科技股份有限公司</p>
-                        <p>吳靜吉教授 國立政治大學講座教授</p>
-                        <p>黃宛華主任 資策會數位教育研究所數位內容中心</p>               
-                        <p>張銘光總監 樂陞科技</p>
+                                <p>施文祥董事長 西基電腦動畫股份有限公司</p>
+                                <p>李政宜總監 和碩聯合科技股份有限公司</p>
+                                <p>吳靜吉教授 國立政治大學講座教授</p>
+                                <p>黃宛華主任 資策會數位教育研究所數位內容中心</p>               
+                                <p>張銘光總監 樂陞科技</p>
                             </div>
-                            
+
                             <div class="arrow"></div>
                         </div>
                     </li>
@@ -277,13 +278,16 @@
             <img src="image/emozionale_bg.png">
         </div>
 
-		<div id="footer">
-                <div class="container_12">
-                    <div class="gri d_4">
-                        聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
-                    </div> 
+        <div id="footer">
+            <div class="container_12">
+                <div class="grid_4" style="margin: 10px 0px 10px 0px">
+                    聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
+                </div> 
+                <div class="grid_12 copyright" style="text-align: center"> 
+                    COPYRIGHT@2013
                 </div>
+            </div>
         </div>
 
-</body>
+    </body>
 </html>

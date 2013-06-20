@@ -27,7 +27,8 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" media="all" href="960_min/text.css" />
         <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
         <link href="css/nav_css.css" rel="stylesheet">
-        <script src="bootstrap/js/bootstrap.min.js"></script>       
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/clock.js"></script>
 
         <style>
             body{
@@ -52,117 +53,117 @@ and open the template in the editor.
             }
 
 
-        /*clock*/
+            /*clock*/
             #clockContainer {
                 width: 120px;
                 height: 120px;
-               position:relative;
+                position:relative;
                 top: 5px;
                 left: 0px;    
             }
 
             #clock {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    margin: 0px;
-                    background: url(image/clock.jpg) 0 0 no-repeat;
-                    list-style: none;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                margin: 0px;
+                background: url(image/clock.jpg) 0 0 no-repeat;
+                list-style: none;
             }
 
             #sec, #min, #hour {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    top: 0px;
-                    left: 0px;
-                    display: list-item;
-                   text-align: -webkit-match-parent;
-                   margin-left: 0px;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                top: 0px;
+                left: 0px;
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-left: 0px;
             }
 
             #sec {
-                    background: url(image/clock_seconds.png);
-                    z-index: 3;
+                background: url(image/clock_seconds.png);
+                z-index: 3;
             }
 
             #min {
 
-                    background: url(image/clock_minutes.png);
-                    z-index: 2;
+                background: url(image/clock_minutes.png);
+                z-index: 2;
             }
 
             #hour {
-                    background: url(image/clock_hours.png);
-                    z-index: 1;
+                background: url(image/clock_hours.png);
+                z-index: 1;
             }
 
-            
-    /*clock end*/
 
-		.apply{
-			background-color: #CCCCCC;
-			display: block;
-			text-align: center;
-			padding-left: 20px;
-			padding-right: 20px;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			margin-top: 15px;
-			-webkit-transition:all 0.3s 0s ease-out;
-			transition:all 0.3s 0s ease-out;
-			text-decoration:none;
-			color: black;
-		}
-		.course{
-			background-color: white;
-			display: block;
-			text-align: center;
-			padding-left: 20px;
-			padding-right: 20px;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			margin-top: 5px;
-			-webkit-transition:all 0.3s 0s ease-out;
-			transition:all 0.3s 0s ease-out;
-			text-decoration:none;
-			color:black;
-		}
-		.other{
-			background-color: white;
-			display: block;
-			text-align: center;
-			padding-left: 20px;
-			padding-right: 20px;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			margin-top: 5px;
-			-webkit-transition:all 0.3s 0s ease-out;
-			transition:all 0.3s 0s ease-out;
-			text-decoration:none;
-			color:black;
-		}				
-/*		#menu_side{
-			background-color: white;
-		}
-*/        
-		#accordion{
-        	padding-left: 5px;
-        	padding-right: 5px; 
-        	border-left: 1px dashed;
-        	border-right: 1px dashed;
-        }
+            /*clock end*/
 
-        #footer{
-            margin-top: 30px;
+            .apply{
+                background-color: #CCCCCC;
+                display: block;
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-top: 15px;
+                -webkit-transition:all 0.3s 0s ease-out;
+                transition:all 0.3s 0s ease-out;
+                text-decoration:none;
+                color: black;
+            }
+            .course{
+                background-color: white;
+                display: block;
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-top: 5px;
+                -webkit-transition:all 0.3s 0s ease-out;
+                transition:all 0.3s 0s ease-out;
+                text-decoration:none;
+                color:black;
+            }
+            .other{
+                background-color: white;
+                display: block;
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-top: 5px;
+                -webkit-transition:all 0.3s 0s ease-out;
+                transition:all 0.3s 0s ease-out;
+                text-decoration:none;
+                color:black;
+            }
+            /*		#menu_side{
+                                    background-color: white;
+                            }
+            */        
+            #accordion{
+                padding-left: 5px;
+                padding-right: 5px; 
+                border-left: 1px dashed;
+                border-right: 1px dashed;
+            }
+
+            #footer{
+                margin-top: 30px;
                 background-color: #e0d9cb;
                 font-size: 14px;
                 margin-bottom:20px; 
-        }
+            }
 
 
 
-</style>
+        </style>
 
         <script>
             $(function() {
@@ -184,7 +185,7 @@ and open the template in the editor.
     <body>
         <div class="container_12">
             <div id="header">
-                <div class="grid_12 head">                   
+                <div class="grid_12 head">
                     <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
                     <div id="clockContainer" class="grid_3">
                         <ul id="clock">
@@ -194,45 +195,46 @@ and open the template in the editor.
                         </ul>
                     </div>
                 </div>
+
+                <div id="nav-bar" class="grid_12">
+                    <nav class="main-nav" id="main-nav">
+                        <a href="index.html" class="home link">
+                            <span class="icon-home" aria-hidden="true"></span>首頁
+                        </a>
+                        <a href="introduce.html" class="forums link">
+                            <span class="icon-star" aria-hidden="true"></span>認識學程
+                        </a>
+                        <a href="member_teacher.html" class="snippets link">
+                            <span class="icon-user" aria-hidden="true"></span>成員
+                        </a>
+                        <a href="course.html" class="gallery link">
+                            <span class="icon-book" aria-hidden="true"></span>課程
+                        </a>
+                        <a href="recruit.html" class="videos link">
+                            <span class="icon-th-list" aria-hidden="true"></span>招生訊息
+                        </a>
+                        <a href="activities.html" class="demos link">
+                            <span class="icon-camera" aria-hidden="true"></span>活動照片
+                        </a>
+                        <a href="masterpiece/masterpiece.html" class="lodge link">
+                            <span class="icon-picture" aria-hidden="true"></span>學生作品
+                        </a>
+                        <a href="faq_apply.html" class="lodge link">
+                            <span class="icon-question-sign" aria-hidden="true"></span>常見問題
+                        </a>
+                    </nav>
+                </div>
             </div>
-            <div id="nav-bar" class="grid_12">
-                <nav class="main-nav" id="main-nav">
-                    <a href="index.html" class="home link">
-                        <span class="icon-home" aria-hidden="true"></span>首頁
-                    </a>
-                    <a href="introduce.html" class="forums link">
-                        <span class="icon-star" aria-hidden="true"></span>認識學程
-                    </a>
-                    <a href="member_teacher.html" class="snippets link">
-                        <span class="icon-user" aria-hidden="true"></span>成員
-                    </a>
-                    <a href="course.html" class="gallery link">
-                        <span class="icon-book" aria-hidden="true"></span>課程
-                    </a>
-                    <a href="recruit.html" class="videos link">
-                        <span class="icon-th-list" aria-hidden="true"></span>招生訊息
-                    </a>
-                    <a href="activities.html" class="demos link">
-                        <span class="icon-camera" aria-hidden="true"></span>活動照片
-                    </a>
-                    <a href="masterpiece/masterpiece.html" class="lodge link">
-                        <span class="icon-picture" aria-hidden="true"></span>學生作品
-                    </a>
-                    <a href="faq_apply.html" class="lodge link">
-                        <span class="icon-question-sign" aria-hidden="true"></span>常見問題
-                    </a>
-                </nav>
-            </div>
-            
+
             <div id="content">
 
-             <div id="menu_side" class="grid_2">
-                <ul id="menu">
-                    <li><a href="faq_apply.html" class="apply">申請相關</a></li>
-                    <li><a href="faq_course.html" class="course">課程相關</a></li>
-                    <li><a href="faq_other.html"class="other">其他</a></li>
-                </ul>
-            </div>           	
+                <div id="menu_side" class="grid_2">
+                    <ul id="menu">
+                        <li><a href="faq_apply.html" class="apply">申請相關</a></li>
+                        <li><a href="faq_course.html" class="course">課程相關</a></li>
+                        <li><a href="faq_other.html" class="other">其他</a></li>
+                    </ul>
+                </div>
                 <div class="grid_10">
                     <div id="accordion">
                         <h3>學程的申請表要在那裡下載?</h3>
@@ -258,17 +260,20 @@ and open the template in the editor.
                         <h3>可否先修學程的課，等甄選通過後便可以少修些學分? </h3>
                         <p>同學在甄選進入學程之前，先修讀學程所開設的課程(課程科目代號前三碼為781之科目)，甄選進入學程之後，同學不需經過抵免申請，這些學分都自動列計，且沒有上限。只是學程所開設的課程，主要是以學程的同學為主，有些課程僅開放給學程的同學修讀。有些課程除非有餘額，否則優先給學程同學修讀。</p>
                     </div>
-                
-        <img src="image/emozionale_bg.png">
-        </div>    
-    </div>
-    </div>
-		<div id="footer">
-                <div class="container_12">
-                    <div class="gri d_4">
-                        聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
-                    </div> 
+
+                    <img src="image/emozionale_bg.png">
+                </div>    
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container_12">
+                <div class="grid_4" style="margin: 10px 0px 10px 0px">
+                    聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
+                </div> 
+                <div class="grid_12 copyright" style="text-align: center"> 
+                    COPYRIGHT@2013
                 </div>
+            </div>
         </div>
 
     </body>

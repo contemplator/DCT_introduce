@@ -5,7 +5,7 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-         <title></title>
+        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <!--jquery-->
@@ -29,71 +29,71 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" media="all" href="960_min/960.css" />
 
         <script src="js/clock.js"></script>
- 
+
         <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
         <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
         <style>
-           body{
+            body{
                 font-family: '微軟正黑體';
                 background-image: url("image/wavegrid.png");
             }
-           header{
+            header{
                 margin: 10px;
             }
-             .head{
+            .head{
                 border-top: solid;
                 border-bottom: solid;
                 margin-top: 10px;
                 margin-bottom: 10px;
                 background-color:#FFF;
             }
-           
+
             image{
                 height: 80%;
             }
-        /*clock*/
+            /*clock*/
             #clockContainer {
                 width: 120px;
                 height: 120px;
-               position:relative;
+                position:relative;
                 top: 5px;
                 left: 0px;    
             }
 
             #clock {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    margin: 0px;
-                    background: url(image/clock.jpg) 0 0 no-repeat;
-                    list-style: none;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                margin: 0px;
+                background: url(image/clock.jpg) 0 0 no-repeat;
+                list-style: none;
             }
 
             #sec, #min, #hour {
-                    position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    top: 0px;
-                    left: 0px;
-                    display: list-item;
-                   text-align: -webkit-match-parent;
-                   margin-left: 0px;
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                top: 0px;
+                left: 0px;
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-left: 0px;
             }
 
             #sec {
-                    background: url(image/clock_seconds.png);
-                    z-index: 3;
+                background: url(image/clock_seconds.png);
+                z-index: 3;
             }
 
             #min {
-                    background: url(image/clock_minutes.png);
-                    z-index: 2;
+                background: url(image/clock_minutes.png);
+                z-index: 2;
             }
 
             #hour {
-                    background: url(image/clock_hours.png);
-                    z-index: 1;
+                background: url(image/clock_hours.png);
+                z-index: 1;
             }
             /*clock end*/     
             #footer{
@@ -101,71 +101,71 @@ and open the template in the editor.
                 font-size: 14px;
             }
             .shadowpic{
-            	position: relative;
-            	bottom: 1px;
+                position: relative;
+                bottom: 1px;
             }
 
             #content{
-            	display: block;
-            	background-color: white;
+                display: block;
+                background-color: white;
             }     
             .newstitle{
-            	font-size: 16px;
-            	border-top: 20px;
-            	padding-left: 15px;
+                font-size: 16px;
+                border-top: 20px;
+                padding-left: 15px;
             }
             .reportdate{
-            	font-size: 12px;
-            	padding-left: 16px;
+                font-size: 12px;
+                padding-left: 16px;
             }
-			.onenews{
-				margin-bottom:12px;
-				padding-bottom:20px;
-				border-bottom: 1px dotted;
-			}
-			.newscontent{
-				padding: 20px;
-			}
-			/*scroll bar*/
+            .onenews{
+                margin-bottom:12px;
+                padding-bottom:20px;
+                border-bottom: 1px dotted;
+            }
+            .newscontent{
+                padding: 20px;
+            }
+            /*scroll bar*/
 
-			.wrapper {
-			  width:960px;
-			  background:rgba(20,20,20,.2);
-			  margin:0 auto;
-			  padding:20px 0;
-			}
+            .wrapper {
+                width:960px;
+                background:rgba(20,20,20,.2);
+                margin:0 auto;
+                padding:20px 0;
+            }
 
-			.scrollable {
-			  width:940px;
-			  background:rgba(0,200,200,.1);
-			  height:600px;
-			  margin:0 auto;
-			}
+            .scrollable {
+                width:940px;
+                background:rgba(0,200,200,.1);
+                height:600px;
+                margin:0 auto;
+            }
 
-			.scrollable { overflow-y: auto; }
-			.scrollable::-webkit-scrollbar {
-			    width: 8px;
-			    height: 16px; 
-			}
-			.scrollable::-webkit-scrollbar-thumb {
-			    background-color: rgba(0, 0, 0, 0.2);
-			    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07); 
-			}
-			.scrollable::-webkit-scrollbar-button {
-			    width: 0;
-			    height: 0;
-			    display: none; 
-			}
-			.scrollable::-webkit-scrollbar-corner {
-			    background-color: transparent; 
-			}
+            .scrollable { overflow-y: auto; }
+            .scrollable::-webkit-scrollbar {
+                width: 8px;
+                height: 16px; 
+            }
+            .scrollable::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.2);
+                -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07); 
+            }
+            .scrollable::-webkit-scrollbar-button {
+                width: 0;
+                height: 0;
+                display: none; 
+            }
+            .scrollable::-webkit-scrollbar-corner {
+                background-color: transparent; 
+            }
 
-			/*scroll bar*/
+            /*scroll bar*/
 
         </style>
     </head>
     <body>
-       <div class="container_12">
+        <div class="container_12">
             <div id="header">
                 <div class="grid_12 head">                   
                     <div class="grid_10"><a href="index.html"><img src="image/header.jpg" alt="" /></a></div>
@@ -206,68 +206,75 @@ and open the template in the editor.
                     </a>
                 </nav>
             </div>
-        
-<!-- 			<div>
-                <table id="news_content">
-                    <tr><th>公告類別<</th><th>公告名稱<</th><th>公告時間<</th></tr>
-                </table>
-            </div>
- -->
- 		<div id="content" class="scrollable">
 
- 			<div class="onenews">
- 				<div class="newstitle"><br>102學年度數位內容與科技學士學位學程錄取名單</div>
- 				<div class="reportdate">2013-06-17</div>
- 				<div class="newscontent"><a href="http://dct.cs.nccu.edu.tw/downloads/2013members.pdf">錄取名單</a></div>
- 			</div>
-  			<div class="onenews">
- 				<div class="newstitle">第三屆數位內容與科技學士學分學程招生口試名單 </div>
- 				<div class="reportdate">2013-06-06</div>
- 				<div class="newscontent"><a href="http://dct.cs.nccu.edu.tw/downloads/1020610_Interview_time.pdf">口試報到時間</a></div>
- 			</div>
- 			<div class="onenews">
- 				<div class="newstitle">第三屆數位內容與科技學士學分學程招生說明會 </div>
- 				<div class="reportdate">2013-04-24</div>
- 				<div class="newscontent">時間：102/5/6(一) 10:00-12:00<br>報名網址：<a herf="http://moltke.cc.nccu.edu.tw/Registration/registration.do?action=conferenceInfo&conferenceID=X06495">聯合報名系統線上報名</a></div>
- 			</div>
- 			<div class="onenews">
- 				<div class="newstitle">第三屆經濟部搶鮮大賽</div>
- 				<div class="reportdate">2013-05-01</div>
- 				<div class="newscontent">名稱：第三屆經濟部搶鮮大賽<br>
-競賽項目：系統整合實作及創意發想兩類<br>活動詳細內容及報名方法請參考競賽網頁
-<br>競賽網頁：<a href="http://www.getfresh.org.tw/index.aspx">
-http://www.getfresh.org.tw/index.aspx</a></div>
- 			</div>
- 			<div class="onenews">
- 				<div class="newstitle">學程第一屆畢業展演[數位密室逃脫]-柏菲瑟‧安德表特 </div>
- 				<div class="reportdate">2013-04-11</div>
- 				<div class="newscontent">時間：5/13(一)~5/20(一)每天各五個場次<br>
-競賽項目：系統整合實作及創意發想兩類<br>報名：採【5/1、5/2→羅馬廣場5/8、5/9→麥側攤位】現場報名<br><a href="http://dct.cs.nccu.edu.tw/index.php">更多資訊</a></div>
- 			</div>
-  			<div class="onenews1">
- 				<div class="newstitle">2013文化數位創意加值競賽 </div>
- 				<div class="reportdate">2013-04-24</div>
- 				<div class="newscontent">主辦單位：臺灣資訊傳播學會<br>
-承辦單位：靜宜大學資訊傳播工程學系<br>
-報名／收件截止：即日起至 102/5/</div>
- 			</div>
+            <!-- 			<div>
+                            <table id="news_content">
+                                <tr><th>公告類別<</th><th>公告名稱<</th><th>公告時間<</th></tr>
+                            </table>
+                        </div>
+            -->
+            <div id="content" class="scrollable">
 
- 		</div>	 
-        <img src="image/emozionale_bg.png" class="shadowpic">
-         <div id="footer">
+                <div class="onenews">
+                    <div class="newstitle"><br>102學年度數位內容與科技學士學位學程錄取名單</div>
+                    <div class="reportdate">2013-06-17</div>
+                    <div class="newscontent"><a href="http://dct.cs.nccu.edu.tw/downloads/2013members.pdf">錄取名單</a></div>
+                </div>
+                <div class="onenews">
+                    <div class="newstitle">第三屆數位內容與科技學士學分學程招生口試名單 </div>
+                    <div class="reportdate">2013-06-06</div>
+                    <div class="newscontent"><a href="http://dct.cs.nccu.edu.tw/downloads/1020610_Interview_time.pdf">口試報到時間</a></div>
+                </div>
+                <div class="onenews">
+                    <div class="newstitle">第三屆數位內容與科技學士學分學程招生說明會 </div>
+                    <div class="reportdate">2013-04-24</div>
+                    <div class="newscontent">時間：102/5/6(一) 10:00-12:00<br>報名網址：<a herf="http://moltke.cc.nccu.edu.tw/Registration/registration.do?action=conferenceInfo&conferenceID=X06495">聯合報名系統線上報名</a></div>
+                </div>
+                <div class="onenews">
+                    <div class="newstitle">第三屆經濟部搶鮮大賽</div>
+                    <div class="reportdate">2013-05-01</div>
+                    <div class="newscontent">名稱：第三屆經濟部搶鮮大賽<br>
+                        競賽項目：系統整合實作及創意發想兩類<br>活動詳細內容及報名方法請參考競賽網頁
+                        <br>競賽網頁：<a href="http://www.getfresh.org.tw/index.aspx">
+                            http://www.getfresh.org.tw/index.aspx</a></div>
+                </div>
+                <div class="onenews">
+                    <div class="newstitle">學程第一屆畢業展演[數位密室逃脫]-柏菲瑟‧安德表特 </div>
+                    <div class="reportdate">2013-04-11</div>
+                    <div class="newscontent">時間：5/13(一)~5/20(一)每天各五個場次<br>
+                        競賽項目：系統整合實作及創意發想兩類<br>報名：採【5/1、5/2→羅馬廣場5/8、5/9→麥側攤位】現場報名<br><a href="http://dct.cs.nccu.edu.tw/index.php">更多資訊</a></div>
+                </div>
+                <div class="onenews">
+                    <div class="newstitle">2013文化數位創意加值競賽 </div>
+                    <div class="reportdate">2013-04-24</div>
+                    <div class="newscontent">主辦單位：臺灣資訊傳播學會<br>
+                        承辦單位：靜宜大學資訊傳播工程學系<br>
+                        報名／收件截止：即日起至 102/5/1</div>
+                </div>
+                <div>
+                    <table id="news_content"></table>
+                </div>
+            </div>	 
+            <img src="image/emozionale_bg.png" class="shadowpic">
+
+            <div id="footer">
                 <div class="container_12">
-                    <div class="grid_4">
+                    <div class="grid_4" style="margin: 10px 0px 10px 0px">
                         聯絡我們<br/>聯絡人：熊韻茹<br/>電話：(02)29393091 轉 62274<br/>信箱：dct_ta@cs.nccu.edu.tw<br/>地址：11605 台北市文山區指南路二段六十四號
                     </div> 
+                    <div class="grid_12 copyright" style="text-align: center"> 
+                        COPYRIGHT@2013
+                    </div>
                 </div>
-        </div>
+            </div>
 
-		</div>
-		<script>
+        </div>
+        <script src="https://www.parse.com/downloads/javascript/parse/latest/min.js"></script>
+        <script>
             $(function() {
                 Parse.initialize("LO28TRXHBIC7zQTwO3OYhHcf66g8j46ux7XXc2Aq", "x8MYJCuOQsYFDRZK4wwbbkv5CRjbwkG8VrIkQfsx");
                 var News = Parse.Object.extend("News");
-                
+
                 var news = new Parse.Query(News);
                 news.descending("date");
 
@@ -280,12 +287,16 @@ http://www.getfresh.org.tw/index.aspx</a></div>
                             var month = object.get("date").getMonth();
                             var date = object.get("date").getDate();
                             var date = year + "-" + month + "-" + date;
-
-                            $("#news_content").append("<tr id=" + object.id + ">\n\
-                                <td>" + object.get("type") + "</td>\n\
-                                <td><a href=\"" + object.get("website") + "\">" + object.get("title") + "</a></td>\n\
-                                <td>" + date + "</td>\n\
-                                </tr>");
+                            $("#news_content").append("<div class=\"onenews\">" + 
+                                    "<div class=\"newstitle\"><br/>" + object.get("title") + "</div>" +
+                                    "<div class=\"reportdate\"" + object.get("date") + "</div>" + 
+                                    "<div class=\"newscontent\"><a href=\"" + object.get("website") + "\">" + object.get("comment") + "</a></div>" + 
+                                    "</div>");
+//                            $("#news_content").append("<tr id=" + object.id + ">\n\
+//                        <td>" + object.get("type") + "</td>\n\
+//                        <td><a href=\"" + object.get("website") + "\">" + object.get("title") + "</a></td>\n\
+//                        <td>" + date + "</td>\n\
+//                        </tr>");
 
                         });
                     },
