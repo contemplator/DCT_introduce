@@ -153,8 +153,7 @@ and open the template in the editor.
                             <td><input type="text" id="link" name="link" placeholder="請輸入作品連結 ex: youtube"/></td>
                         </tr>
                     </table>
-                    <button id="add" onclick="upload(0)">上傳作品後回到首頁</button>
-                    <button id="add" onclick="upload(1)">再上傳一個作品</button>
+                    <button id="add" onclick="upload()">
                     <br/>
                     <br/>
                     <h3>查看已上傳作品</h3>
@@ -180,8 +179,7 @@ and open the template in the editor.
 
                         var Works = Parse.Object.extend("Works");
 
-                        var upload = function(x) {
-                            var x = x;
+                        var upload = function() {
 
                             var works = new Works();
 
@@ -201,13 +199,8 @@ and open the template in the editor.
                             
                             works.save(null, {
                                 success: function(object) {
-                                    alert("object saved!");
-                                    if (x == 0) {
-                                        window.location.assign("index.html");
-                                    }
-                                    else {
-                                        window.location.assign("manageWorks.html");
-                                    }
+                                        window.location.assign("manage_works.html");
+                                    
                                 },
                                 error: function(error) {
                                     alert("Uh oh :( ");
